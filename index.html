@@ -1,0 +1,2383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css"  />
+
+    <link href="sticky-footer.css" rel="stylesheet">
+    
+    <style type="text/css">
+      .journal {background-color: #385c86; color: white; border-radius: 4px; padding: 1px 5px 1px 5px;}
+      ul.skip li.skip {vertical-align: top; padding-bottom: 10px;}
+      .divider {margin: 0cm 0cm .5cm 0cm;}
+      .height100 {min-width: 100%;
+      width: 100%;
+      height: 100%;}
+      ul.halfskip li.halfskip {vertical-align: top; padding: 5px 0; }
+    </style>
+
+    <script type="text/javascript">
+
+      function init() {
+      document.getElementById("People").style.display = "none";
+      document.getElementById("News").style.display = "none";
+      document.getElementById("Publications").style.display = "none";
+      document.getElementById("Academics").style.display = "none";
+      document.getElementById("Join").style.display = "none";
+      document.getElementById("Contact").style.display = "none";
+      toggle_biosketch("ramsey"); 
+      toggle_biosketch("yyao"); 
+      toggle_biosketch("zliu"); 
+      toggle_biosketch("qwei"); 
+      toggle_biosketch("fwomack");
+      toggle_biosketch("dqu");
+      toggle_news();
+      toggle_oldpubs();
+      toggle_alumni(); 
+      window.oldDiv = "Overview";
+      }
+
+      function toggle_biosketch(name) {
+      itemname = "biosketch_" + name;
+      curstate = document.getElementById(itemname).style.display;
+      linkname = "biosketch_toggle_link_" + name;
+      if (curstate == "none") {
+      newstate = "";
+      document.getElementById(linkname).innerHTML = "hide bio";
+      }
+      else {
+      newstate = "none";
+      document.getElementById(linkname).innerHTML = "show bio";
+      }
+      document.getElementById(itemname).style.display = newstate;
+      }
+      
+      function toggle_alumni() {
+      curstate = document.getElementById("alumni_toggle").style.display;
+      if (curstate == "none") {
+      newstate = "";
+      document.getElementById("alumni_toggle_href").innerHTML = "[hide lab alumni list:]";
+      }
+      else {
+      newstate = "none";
+      document.getElementById("alumni_toggle_href").innerHTML = "[show lab alumni list ...]";
+      }
+      document.getElementById("alumni_toggle").style.display = newstate;
+      }
+
+      function toggle_news() {
+      curstate = document.getElementById("news_toggle").style.display;
+      if (curstate == "none") {
+      newstate = "";
+      document.getElementById("news_toggle_href").innerHTML = "[hide news archive:]";
+      }
+      else {
+      newstate = "none";
+      document.getElementById("news_toggle_href").innerHTML = "[show news archive ...]";
+      }
+      document.getElementById("news_toggle").style.display = newstate;
+      }
+
+      function toggle_oldpubs() {
+      curstate = document.getElementById("oldpubs_toggle").style.display;
+      if (curstate == "none") {
+      newstate = "";
+      document.getElementById("oldpubs_toggle_href").innerHTML = "[hide older publications:]";
+      }
+      else {
+      newstate = "none";
+      document.getElementById("oldpubs_toggle_href").innerHTML = "[show older publications ...]";
+      }
+      document.getElementById("oldpubs_toggle").style.display = newstate;
+      }
+      
+      function nav(newDiv) {
+      newLink = "link" + newDiv;
+      var oldDiv = window.oldDiv;
+      oldLink = "link" + oldDiv;
+      var ele = document.getElementById(oldDiv);
+      if (newDiv != oldDiv) {
+      ele.style.display = "none";
+      ele = document.getElementById(newDiv);
+      if(ele.style.display == "block") {
+      ele.style.display = "none";
+      }
+      else {
+      ele.style.display = "block";
+      }
+      document.getElementById(oldLink).style.color = "grey";
+      document.getElementById(newLink).style.color = "#ffffff";
+      }
+      window.oldDiv = newDiv;
+      }
+
+    </script>
+
+    
+    <link rel="shortcut icon" href="OSU_shortcut_icon.ico" type="image/x-icon" />
+
+    <meta http-equiv="last-modified" content="Thu, 26 Jul 2018 20:47 GMT" />
+
+    <meta name="keywords" content="systems biology,computational biology,bioinformatics,inflammation,innate immunity,statistics,immunology,macrophages,macrophage,mouse models,systems immunology,atherosclerosis,big data,network,scientific computing,machine learning,Stephen Ramsey,ISB,Seattle BioMed,CIDR,Oregon State University,OSU,gene regulation,gene regulatory network,epigenomics,genomics,Stephen Ramsey Laboratory,GRN,Ramsey Lab,cancer,cistrome,Bayesian,eQTL,GWAS,variome,cancer" />
+
+    <meta name="description" content="Website for Stephen Ramsey, Assistant Professor, Oregon State University" />
+
+    <title>Ramsey Laboratory | Computational Systems Biology | OSU</title>    
+  </head>
+  
+  <body onload="init();">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand" href="#Overview" onclick="javascript:nav('Overview'); return false;">ramseylab</a> 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" id="linkOverview" onclick="javascript:nav('Overview'); return false;" href="#Overview" data-toggle="collapse" data-target=".navbar-collapse.show">overview <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="linkPeople" onclick="javascript:nav('People'); return false;" href="#People" data-toggle="collapse" data-target=".navbar-collapse.show">people</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="linkNews" onclick="javascript:nav('News'); return false;" href="#News" data-toggle="collapse" data-target=".navbar-collapse.show">news</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="linkPublications" onclick="javascript:nav('Publications'); return false;" href="#Publications" data-toggle="collapse" data-target=".navbar-collapse.show">publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="linkAcademics" onclick="javascript:nav('Academics'); return false;" href="#Academics" data-toggle="collapse" data-target=".navbar-collapse.show">academics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="linkJoin" onclick="javascript:nav('Join'); return false;" href="#Join" data-toggle="collapse" data-target=".navbar-collapse.show">join</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="linkContact" onclick="javascript:nav('Contact'); return false;" href="#Contact" data-toggle="collapse" data-target=".navbar-collapse.show">contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="linkCode" href="https://github.com/ramseylab" target="_blank">code</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div id="Overview">
+      <div class="container-fluid">
+        <div class="row">
+          <img class="img-fluid height100" src="Circos-cropped.png" alt="gene regulation in mouse macrophages" />
+        </div>
+      </div>
+
+
+      <div class="container">
+        <div class="divider"></div>
+        
+        <h4>Ramsey Laboratory at Oregon State University</h4>
+        
+        <p><img src="gene_icon.png" width="20" alt="gene icon"/> Our long-term
+          goal is to use the tools of computational systems biology to advance
+          precision medicine. We integrate cellular, molecular, and population
+          genetic information and datasets on a variety of scales within network
+          models. By analyzing these network models, we aim to identify new
+          disease mechanisms or therapeutic targets. Elucidating the role of
+          noncoding regulatory elements in pathogenesis is a major area of
+          interest, in which we are using both machine learning and classical
+          statistical approaches. We use cross-species approaches in our work,
+          integrating canine and human datasets in the case of cancer and human
+          and mouse datasets in the case of cardiovascular disease.
+        </p>
+        <p><img src="gene_icon.png" width="20" alt="gene icon"/> Our research
+          projects have been supported by funding from the National Institutes of
+          Health, National Science Foundation (including a 2016 Career award),
+          Medical Research Foundation of Oregon, PhRMA Foundation, Animal
+          Cancer Foundation, OHSU Knight Cancer Institute, and National
+          Center for Advancing Translational Sciences.
+        </p>
+        <p>
+          &nbsp;
+        </p>
+      </div>        
+    </div>
+    
+    <div id="People">
+
+
+      <div class="container">
+
+        <div class="divider"></div>
+        <h4>Current lab researchers</h4>
+        
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-4">Stephen Ramsey</div>
+          <div class="col-md-4">Assistant Professor</div>
+          <div class="col-md-2"><a href='&#109;ail&#116;o&#58;stephen&#46;r&#97;%&#54;Dsey&#64;&#37;6&#70;&#37;72&#101;%67onsta%7&#52;&#101;&#46;e&#100;&#117;'>email</a></div>
+          <div class="col-md-2"><a id="biosketch_toggle_link_ramsey" href="#People" onclick="javascript:toggle_biosketch('ramsey'); return false;">show bio</a></div>
+        </div>
+        <div class="row" id="biosketch_ramsey">
+          <div class="col-md-2"><img src="sramsey.png" alt="portrait" /><br />
+            &nbsp;<br />
+            &nbsp;&nbsp;&nbsp;<a class="decfont" href="sramsey_studio.jpg">[link to portrait]</a>
+          </div>
+          <div class="col-md-10">
+            Stephen earned a PhD in physics from the University of Maryland and an
+            ScB in mathematical physics from Brown University. Building on his
+            computational modeling background from physics, Stephen joined the University of
+            Washington Genome Center as a senior fellow, where he worked on genome mapping
+            algorithms in Maynard Olson's laboratory. Stephen's work on the Human Genome
+            Project paved the way toward more molecular- and network-oriented research
+            projects &ndash; primarily in the area of gene regulatory network modeling,
+            analysis, and inference &ndash; in the labs of Hamid Bolouri and Ilya Shmulevich
+            at the Institute for Systems Biology.  Prior to joining OSU, Stephen held a
+            senior scientist appointment in Alan Aderem's laboratory at the Center for
+            Infectious Disease Research, where his work on computational methods for mapping
+            gene networks earned him a K25 Career Development Award from the National
+            Institutes of Health. At OSU, Stephen holds a dual appointment in the Department
+            of Biomedical Sciences and in the School of Electrical Engineering and Computer
+            Science. Stephen has an NSF CAREER award and he is an affiliate
+            member of the Knight Cancer Institute at OHSU.
+
+            <ul class="halfskip">
+              <li class="halfskip">Assistant Professor, OSU Department of Biomedical Sciences</li>
+              <li class="halfskip">Assistant Professor, OSU School of Electrical Engineering and Computer Science</li>
+              <li class="halfskip">Affiliate Member, OHSU <a href="https://www.ohsu.edu/xd/health/services/cancer/" target="_blank">Knight Cancer Institute</a>, <a href="https://www.ohsu.edu/xd/health/services/cancer/research-training/research-programs/quantitative-oncology.cfm" target="_blank">Quantitative Oncology Program</a></li>
+              
+              <li class="halfskip">OSU <a href="http://cgrb.oregonstate.edu" target="_blank">Center for Genome Research and
+                  Biocomputing</a> (Faculty Affiliate)</li>
+
+              <li class="halfskip">OSU <a href="http://www.mcb.oregonstate.edu"
+                                          target="_blank">Molecular and Cellular Biology Graduate
+                  Program</a> (Faculty Affiliate)</li>
+
+              <li class="halfskip">OSU <a href="http://health.oregonstate.edu/healthy-aging" target="_blank">Center for Healthy Aging
+                  Research</a> (Faculty Affiliate)</li>
+
+            </ul>
+
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-4">Deqing Qu</div>
+          <div class="col-md-4">Graduate Student</div>
+          <div class="col-md-2">
+            <a  href="m&#97;ilto&#58;&#113;&#117;d&#64;ore%&#54;7%6Fnstate&#46;e%6&#52;u">email</a></div>
+          <div class="col-md-2"><a id="biosketch_toggle_link_dqu" href="#People" onclick="javascript:toggle_biosketch('dqu'); return false;">show bio</a></div>
+        </div>
+        <div class="row" id="biosketch_dqu">
+          <div class="col-md-2">&nbsp;</div>
+          <div class="col-md-10">
+            Deqing Qu is a masters student in Computer Science, in the Software
+            Innovation track. He is working on the NCATS Translator Reasoning
+            Tool project. He holds an MS CS and BS CS from Hefei University of
+            Technology.
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-4">Finn Womack</div>
+          <div class="col-md-4">Programmer Analyst</div>
+          <div class="col-md-2">
+            <a  href="&#109;a&#105;&#108;to&#58;&#119;%6F&#37;6D&#97;%63%6B&#37;66&#64;o%72%65go&#110;st%6&#49;%74&#101;%2Eedu">email</a></div>
+          <div class="col-md-2"><a id="biosketch_toggle_link_fwomack" href="#People" onclick="javascript:toggle_biosketch('fwomack'); return false;">show bio</a></div>
+        </div>
+        <div class="row" id="biosketch_fwomack">
+          <div class="col-md-2">&nbsp;</div>
+          <div class="col-md-10">
+            Finn Womack is a programmer-analyst working on the NCATS Translator Reasoning Tool project.
+            He has a degree in mathematics from OSU.
+          </div>
+        </div>        
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-4">Qi Wei</div>
+          <div class="col-md-4">Graduate Student</div>
+          <div class="col-md-2">
+            <a  href="mailt&#111;&#58;%7&#55;%65%&#54;9%&#55;1i&#64;u%7&#55;&#46;%65du">email</a></div>
+          <div class="col-md-2"><a id="biosketch_toggle_link_qwei" href="#People" onclick="javascript:toggle_biosketch('qwei'); return false;">show bio</a></div>
+        </div>
+        <div class="row" id="biosketch_qwei">
+          <div class="col-md-2">&nbsp;</div>
+          <div class="col-md-10">
+            Qi is a graduate student in computer science. He has a BS in Computer Science
+            from the Luebeck University of Applied Science and an MS in computer science
+            from the University of Washington, where he worked in the lab of Prof. Ka Yee
+            Yeung.
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-4">Yao Yao</div>
+          <div class="col-md-4">Graduate Student</div>
+          <div class="col-md-2">
+            <a  href="mailto&#58;y&#97;o&#121;&#97;&#111;%40o&#110;%69d&#46;o&#114;&#37;65&#103;&#111;&#110;s&#116;at&#101;%2&#69;ed&#117;">email</a></div>
+          <div class="col-md-2"><a id="biosketch_toggle_link_yyao" href="#People" onclick="javascript:toggle_biosketch('yyao'); return false;">show bio</a></div>
+        </div>
+        <div class="row" id="biosketch_yyao">
+          <div class="col-md-2">&nbsp;</div>
+          <div class="col-md-10">
+            Yao is a graduate student in computer science. He has a BS in computer science from Harbin Institute
+            of Technology and an MS in computer science form Wuhan University. He has also worked at NetEase in China
+            before coming to OSU.
+          </div>
+        </div>
+         <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-4">Zheng Liu</div>
+          <div class="col-md-4">Graduate Student</div>
+          <div class="col-md-2">
+            <a  href="mailt&#111;&#58;liuz%&#54;8&#101;n&#64;&#111;n&#105;%64&#46;&#111;re%67%6Fn&#37;&#55;3ta&#116;e&#46;e&#100;u">email</a>
+          </div>
+          <div class="col-md-2"><a id="biosketch_toggle_link_zliu" href="#People" onclick="javascript:toggle_biosketch('zliu'); return false;">show bio</a></div>
+        </div>
+        <div class="row" id="biosketch_zliu">
+          <div class="col-md-2">&nbsp;</div>
+          <div class="col-md-10">
+            Zheng is a graduate student in computer science. He has a BS in computer science
+            from Wuhan University of Science and Technology and a MS in computer science
+            from Guizhou University. 
+          </div>
+        </div>
+        
+        <div class="divider">&nbsp;</div>
+        <div class="divider"></div>
+      </div>
+
+      <div class="maxtextwidth">
+
+        <div class="container">
+
+          <div class="divider"></div>
+          <h4>Current project collaborators</h4>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3"><a href="http://koslicki.math.oregonstate.edu/" target="_blank">David Koslicki</a></div>
+            <div class="col-md-6">OSU Department of Mathematics</div>
+            <div class="col-md-3">biomedical reasoning engine</div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3"><a href="https://www.systemsbiology.org/bio/eric-deutsch-phd/" target="_blank">Eric Deutsch</a></div>
+            <div class="col-md-6">Institute for Systems Biology</div>
+            <div class="col-md-3">biomedical reasoning tool</div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3"><a href="http://www.med.nyu.edu/biosketch/fishee01" target="_blank">Edward A. Fisher</a></div>
+            <div class="col-md-6">New York University School of Medicine</div>
+            <div class="col-md-3">atherosclerosis</div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3"><a href="http://vetmed.oregonstate.edu/departments/academic-faculty/faculty/bracha" target="_blank">Shay Bracha</a></div>
+            <div class="col-md-6">OSU Carlson College of Veterinary Medicine</div>
+            <div class="col-md-3">cancer</div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3"><a href="http://vetmed.oregonstate.edu/departments/academic-faculty/faculty/loehr" target="_blank">Christiane L&ouml;hr</a></div>
+            <div class="col-md-6">OSU Carlson College of Veterinary Medicine</div>
+            <div class="col-md-3">cancer</div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3"><a href="http://www.ohsu.edu/xd/education/schools/school-of-medicine/departments/clinical-departments/pathology/faculty/george-thomas.cfm" target="_blank">George Thomas</a></div>
+            <div class="col-md-6">Oregon Health &amp; Science University</div>
+            <div class="col-md-3">cancer</div>
+          </div>
+          
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3"><a href="http://health.oregonstate.edu/people/bae-harold" target="_blank">Harold Bae</a></div>
+            <div class="col-md-6">OSU School of Biological and Population Health Sciences</div>
+            <div class="col-md-3">genetic epidemiology</div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3"><a href="http://engr.oregonstate.edu/~fue" target="_blank">Elain Fu</a></div>
+            <div class="col-md-6">OSU School of Chemical, Biological, and Environmental Engineering</div>
+            <div class="col-md-3">bioengineering for global health applications</div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3"><a href="http://blogs.oregonstate.edu/morgunshulzhenkolabs/" target="_blank">Natalia Shulzhenko &amp; Andrey Morgun</a></div>
+            <div class="col-md-6">OSU Carlson College of Veterinary Medicine and College of Pharmacy</div>
+            <div class="col-md-3">gene regulation, mouse models</div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3"><a href="http://bpp.oregonstate.edu/tyler" target="_blank">Brett Tyler</a></div>
+            <div class="col-md-6">OSU Department of Botany and Plant Pathology</div>
+            <div class="col-md-3">genome sequencing project</div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3"><a href="http://vetmed.oregonstate.edu/people/daniel-d-rockey" target="_blank">Dan Rockey</a></div>
+            <div class="col-md-6">OSU Department of Biomedical Sciences</div>
+            <div class="col-md-3">chlamydia</div>
+          </div>
+          
+          <p>
+            &nbsp;
+          </p>
+          
+          <p>
+            <a id="alumni_toggle_href" href="#People" onclick="javascript:toggle_alumni(); return false;">[show lab alumni ...]</a>
+          </p>
+
+        </div>
+
+      </div>
+
+      <div id="alumni_toggle">
+
+        <div class="container">
+          
+          <div class="divider"></div>
+          
+          <h4>Lab Alumni</h4>
+          
+          <!--          <div class="row">
+                        <div class="col-md-4"><em>Trainee name</em></div>
+                        <div class="col-md-4"><em>Worked in the lab as a</em></div>
+                        <div class="col-md-4"><em>Now at</em></div>
+          </div> -->         
+          <div class="divider"></div> 
+          <div class="row">
+            <div class="col-md-3">Holly Arnold</div>
+            <div class="col-md-5">post-baccalaureate researcher</div>
+            <div class="col-md-4">OSU (DVM program)</div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3">Jichen Yang</div>
+            <div class="col-md-5">postdoctoral scholar</div>
+            <div class="col-md-4">Thompson-Reuters</div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3">Mudra Choudhury</div>
+            <div class="col-md-5">undergraduate honors student</div>
+            <div class="col-md-4">UCLA (PhD program)</div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3">Tanjin Xu</div>
+            <div class="col-md-5">graduate student (masters)</div>
+            <div class="col-md-4">IBM</div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3">Jun He</div>
+            <div class="col-md-5">graduate student (masters)</div>
+            <div class="col-md-4">Pure Storage</div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3">Satpreet Singh</div>
+            <div class="col-md-5">summer graduate student</div>
+            <div class="col-md-4">University of Washington (PhD program)</div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3">Alvin Yu</div>
+            <div class="col-md-5">undergraduate honors student</div>
+            <div class="col-md-4">Hewlett-Packard (MECOP)</div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3">Amita Kashyap</div>
+            <div class="col-md-5">undergraduate honors student</div>
+            <div class="col-md-4">NIH (Post-Bac Internship)</div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+
+      <div id="News">
+
+        <div class="container">
+
+          <div class="divider"></div>
+          <h4>Recent News</h4>
+
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-md-3"><strong>Jul.&nbsp;6,&nbsp;2018</strong></div>
+            <div class="col-md-9">Our article with Shay Bracha, Jaqueline Bracy,
+              Ryan Troyer, Carl Ruby, Cheri Goodall, Oleh Taratula, and Claudia
+              Maier on circulating exosomes as biomarkers for canine
+              osteosarcoma has been accepted to <em>Translational Oncology</em>.
+        </div></div>
+          
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-md-3"><strong>Jun.&nbsp;6,&nbsp;2018</strong></div>
+            <div class="col-md-9">Our NCATS Translator reasoning tool project is featured in a <a href="http://eecs.oregonstate.edu/feature-stories/advancing-medicine-computer-science" target="_blank">news article</a> on the EECS website.
+        </div></div>
+
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-md-3"><strong>May.&nbsp;25,&nbsp;2018</strong></div>
+            <div class="col-md-9">Our team (Team X-ray) attends the NCATS Translator Hackathon in Bethesda, MD.
+        </div></div>
+        
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-md-3"><strong>May.&nbsp;14,&nbsp;2018</strong></div>
+            <div class="col-md-9">Our work on the NCATS Translator project is highlighed in an
+              article on NCATS <a href="https://ncats.nih.gov/pubs/features/translator-collaborators" target="_blank">Features and Briefs</a>.
+        </div></div>
+                  
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-md-3"><strong>Apr.&nbsp;27,&nbsp;2018</strong></div>
+            <div class="col-md-9">Steve gives a presentation on CERENKOV at the OSU
+            CGRB Spring Conference and Colloquium.</div></div>
+        
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-md-3"><strong>Apr.&nbsp;2,&nbsp;2018</strong></div>
+            <div class="col-md-9">Deqing Qu joins the lab to work on the NCATS
+            Translator Reasoning Tool project. Welcome, Deqing!</div></div>
+                    
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>Mar.&nbsp;14,&nbsp;2018</strong></div>
+          <div class="col-md-9">Steve gave the Bioinformatics Users' Group (BUG)
+          seminar on the NCATS Translator project.</div></div>
+
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>Mar.&nbsp;12,&nbsp;2018</strong></div>
+          <div class="col-md-9">Our work on the NCATS Translator project is highlighted in an
+            article in the <a href="http://blogs.oregonstate.edu/collegeofveterinarymedicine/2018/03/12/biomedical-translator/" target="_blank">Vet Gazette</a>.</div></div>
+       
+        <div class="divider"></div>
+               <div class="row"><div class="col-md-3"><strong>Mar.&nbsp;7,&nbsp;2018</strong></div>
+                 <div class="col-md-9">The National Center for Advancing
+                   Translational Sciences (NCATS) has funded a project, with
+                   Steve, David Koslicki (Math), Eric Deutsch (ISB), and Arnab
+                   Nandi (Ohio State Univ.) as PIs, to develop a
+                   biomedical <a href="http://translatr.io"
+                   target="_blank">translator</a> software reasoning tool. In
+                   the NCATS Translator project ecosystem, our team has been
+                   designated Team X-ray. We will be presenting our prototype
+               reasoning tool at the NCATS Hackathon in DC in May 2018.</div></div>
+
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>Mar.&nbsp;5,&nbsp;2018</strong></div>
+          <div class="col-md-9">Finn Womack joins the lab to work on the NCATS
+          Translator Reasoning tool project. Welcome, Finn!</div></div>
+               
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>Jan.&nbsp;25,&nbsp;2018</strong></div>
+          <div class="col-md-9">Steve gave the Pathogen Research In Progress Seminar
+            (PRIPS) in the Department of Biomedical Sciences, on the subject of feline
+            injection-site sarcoma.</div></div>
+          
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-md-3"><strong>Jan.&nbsp;19,&nbsp;2018</strong></div>
+            <div class="col-md-9">Benjamin Weeder joins the lab for a 10-week MPH biostatistics internship. Welcome, Ben!</div></div>
+          
+        <div class="divider"></div>
+
+        <div class="row">
+            <div class="col-md-3"><strong>Jan.&nbsp;15,&nbsp;2018</strong></div>
+            <div class="col-md-9">The COE podcast about our human regulome project
+            is <a href="https://science360.gov/radio/episode/2e628638-3b3b-4f7c-9125-73401b531941/using-computational-modeling-look-deep-human-genome" target="_blank">featured</a> on the NSF <em>Science
+            360</em> website.</div></div>
+          
+        <div class="divider"></div>
+
+        <div class="row">
+            <div class="col-md-3"><strong>Jan.&nbsp;8-10,&nbsp;2018</strong></div>
+            <div class="col-md-9">Steve (and Co-PIs David Koslicki and Eric
+            Deutsch) attend the NCATS Translator Hackathon in San Diego,
+            CA, under the banner of <em>Team X-Ray</em>.</div></div>
+        
+        <div class="divider"></div>
+          
+        <div class="row">
+            <div class="col-md-3"><strong>Nov.&nbsp;29,&nbsp;2017</strong></div>
+            <div class="col-md-9">Amita Kashyap successfully defends her BRR/UHC thesis.  Congratulations, Amita!</div></div>
+        
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>Nov.&nbsp;2,&nbsp;2017</strong></div>
+          <div class="col-md-9">Steve gives a presentation on machine learning
+            in biomedical research, for the OSU Machine Learning Club.</div></div>
+        
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>Sep.&nbsp;1,&nbsp;2017</strong></div>
+          <div class="col-md-9">Our article on macrophage epigenetics (with Peter
+            Askovich, Alan Aderem, and Dr. Aderem's lab) has been accepted by PLOS
+            ONE.</div></div>
+
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>Aug.&nbsp;21,&nbsp;2017</strong></div>
+          <div class="col-md-9">Steve presents CERENKOV at the ACM-BCB conference in Boston.</div></div>
+
+ 
+        <div class="divider"></div>
+
+      </div>
+
+      <div class="container">
+        <p>
+          <a id="news_toggle_href"  href="#News" onclick="javascript:toggle_news(); return false;">[show news archive ...]</a>
+        </p>
+      </div>
+
+      <div id="news_toggle">
+
+        <div class="container">
+          
+          <h4>News Archive</h4>
+
+       <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>Aug.&nbsp;14,&nbsp;2017</strong></div>
+          <div class="col-md-9">Steve presents CERENKOV at UW Tacoma.</div></div>
+
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>Aug.&nbsp;7,&nbsp;2017</strong></div>
+          <div class="col-md-9">Summer NSF trainees Baylee Goodwin and Dane Besser give three presentations on bioinformatics, at the 2017 SMILE Teacher Workshop.</div></div>
+
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>June&nbsp;26,&nbsp;2017</strong></div>
+          <div class="col-md-9">Atherosclerosis macrophage polarization article with Ed Fisher, Karishma
+            Rahman, P'ng Loke, and Kathryn Moore has been featured in an <a href="https://www.eurekalert.org/pub_releases/2017-06/nlmc-mst062317.php" target="_blank">AAAS EurekaAlert</a>.</div></div>
+
+
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>June&nbsp;7,&nbsp;2017</strong></div>
+          <div class="col-md-9">Our paper on a machine-learning approach for identifying regulatory SNPs (<a href="https://github.com/ramseylab/cerenkov" target="_blank">CERENKOV</a>) has just been accepted to the 2017 ACM-BCB conference. See you in Boston!</div></div>
+
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>May.&nbsp;4,&nbsp;2017</strong></div>
+          <div class="col-md-9">Atherosclerosis macrophage polarization article with Ed Fisher, Karishma
+            Rahman, P'ng Loke, and Kathryn Moore has been accepted by JCI!</div></div>
+
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>Apr.&nbsp;28,&nbsp;2017</strong></div>
+          <div class="col-md-9">Amita's work (with Adelaide Rhodes) on identifying beaver lncRNAs has been highlighted in the <a href="https://adminlb.imodules.com/s/359/file_lib/1001/58/22_ssi_aubree_V2_636280151885678570.pdf" target="_blank">Spring 2017 edition</a> of the Oregon Stater magazine.</div></div>
+
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>Apr.&nbsp;19,&nbsp;2017</strong></div>
+          <div class="col-md-9">Steve gave the Pathogen Research In Progress Seminar
+            (PRIPS) in the Department of Biomedical Sciences, on the subject of feline
+            injection-site sarcoma.</div></div>
+
+        <div class="divider"></div>
+        <div class="row"><div class="col-md-3"><strong>Apr.&nbsp;18,&nbsp;2017</strong></div>
+          <div class="col-md-9">Dr.&nbsp;Nathan Price (Associate Director, Institute for Systems Biology) visits the lab.</div></div>
+          
+        <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Apr.&nbsp;12,&nbsp;2017</strong></div>
+            <div class="col-md-9">Amita's work (with Adelaide Rhodes) on identifying beaver lncRNAs has been highlighted on the <a href="http://www.osufoundation.org/s/359/foundation/index.aspx?sid=359&gid=34&pgid=6134" target="_blank">OSU Foundation website</a>.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Feb.&nbsp;9,&nbsp;2017</strong></div>
+            <div class="col-md-9">Steve gives a public outreach science presentation on the <em>Beaver Genome Project</em> at an OSU SPARK event, <em>Beaver Tales</em>.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;28,&nbsp;2016</strong></div>
+            <div class="col-md-9">Our manuscript (co-authored with Shay Bracha) on bladder cancer
+              has been accepted for publication in <em>Genes, Chromosomes and
+                Cancer</em>.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;21,&nbsp;2016</strong></div><div class="col-md-9">Steve is featured in an OSU College of Engineering podcast in the series <em>Engineering Out Loud</em>, entitled
+              <a href="http://engineering.oregonstate.edu/episode-6-hearts-phantoms" target="_blank">Hearts &amp; Phantoms</a>.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;12,&nbsp;2016</strong></div><div class="col-md-9">Jun He has successfully completed his MS final exam.  Congratulations and best wishes, Jun!</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;7,&nbsp;2016</strong></div><div class="col-md-9">Steve gave a research seminar at the Systems Biology Interest Group (SBIG) meeting at OSU.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Nov.&nbsp;9,&nbsp;2016</strong></div><div class="col-md-9">Zheng Liu and Yao Yao have passed their PhD qualifying examinations.  Congratulations!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Nov.&nbsp;7,&nbsp;2016</strong></div><div class="col-md-9">Our manuscript on combined eQTL and ChIP-seq analysis has been accepted for publication. Congratulations, Mudra!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Oct.&nbsp;13,&nbsp;2016</strong></div><div class="col-md-9">Two new manuscripts accepted for publication -- one article describes a new method for transcription factor binding site enrichment analysis, and the other article describes a systems biology approach for drug repositioning.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Oct.&nbsp;2,&nbsp;2016</strong></div><div class="col-md-9">Steve gives a research presentation at the BigLS 2016 conference in Seattle.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Sep.&nbsp;7,&nbsp;2016</strong></div><div class="col-md-9">Amita presents her research project (with Adelaide Rhodes and Jackson Wells) on the beaver transcriptome at the CVM Undergraduate Research Day.  Congratulations Amita!</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Aug.&nbsp;30,&nbsp;2016</strong></div><div class="col-md-9">Amita presents her research project (with Adelaide Rhodes and Jackson Wells) on the beaver transcriptome at the OSU Undergraduate Research Symposium.  Congratulations Amita!</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Aug.&nbsp;22,&nbsp;2016</strong></div><div class="col-md-9">Ada Weinstock and Karishma Rahman visit from Dr.&nbsp;Edward Fisher's lab at NYU. Welcome to OSU, Ada and Karishma!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>June&nbsp;21,&nbsp;2016</strong></div><div class="col-md-9">Steve is recognized with a PhRMA Foundation Research Starter Grant Award at the 2016 <em>Intelligent Systems in Molecular Biology</em> conference in Orlando.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>June&nbsp;21,&nbsp;2016</strong></div><div class="col-md-9">Steve's NSF Career award is highlighted in the <a href="http://blogs.oregonstate.edu/collegeofveterinarymedicine/2016/06/16/heart-disease-research-earns-prestigious-nsf-award/" target="_blank">Vet Gazette</a>.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>June&nbsp;20,&nbsp;2016</strong></div><div class="col-md-9">Summer students Lexi, Demi, Morgan, and Emma have joined the lab.  Welcome!</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>June&nbsp;13,&nbsp;2016</strong></div><div class="col-md-9">Steve is appointed an affiliate member of the Knight Cancer Institute at OHSU, in the Quantitative Oncology Research Program.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>June&nbsp;1,&nbsp;2016</strong></div><div class="col-md-9">Steve gives the Mathbio seminar over in the Department of Mathematics.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>May&nbsp;31,&nbsp;2016</strong></div><div class="col-md-9">Qi Wei has joined the lab.  Welcome, Qi!</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>May&nbsp;31,&nbsp;2016</strong></div><div class="col-md-9">Tanjin Xu successfully defends his MS CS thesis. Congratulations, Tanjin!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>May&nbsp;29,&nbsp;2016</strong></div><div class="col-md-9">Mudra's senior thesis has been nominated by the BioResource Research degree program
+              for the Writing Intensive Curriculum programs's Culture of Writing Award. Congratulations, Mudra!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>May&nbsp;26,&nbsp;2016</strong></div><div class="col-md-9">Steve's research is recognized with the New Investigator Award from the OSU Carlson College of Veterinary Medicine.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>May&nbsp;18,&nbsp;2016</strong></div><div class="col-md-9">Mudra Choudhury successfully defends her University Honors College / BioResource Resesarch thesis.  Congratulations, Mudra!</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Mar.&nbsp;29,&nbsp;2016</strong></div><div class="col-md-9">Steve receives an <a href="http://www.nsf.gov/awardsearch/showAward?AWD_ID=1553728" target="_blank">NSF Career Award</a> for his project to investigate the effects of genetic variants in the noncoding genome.  Thank you, NSF Division of Biological Infrastructure!</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Mar.&nbsp;23,&nbsp;2016</strong></div><div class="col-md-9">Amita's CVM summer research project on lncRNAs has been funded.  Congratulations, Amita!</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Mar.&nbsp;4,&nbsp;2016</strong></div><div class="col-md-9">The Beaver Genome Project is covered in the <a href="http://www.wsj.com/article_email/does-your-mascot-have-a-dna-sequence-school-boosters-compete-with-science-1457110357-lMyQjAxMTA2NTA2NDYwMjQ5Wj" target="_blank">Wall Street Journal</a>.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Feb.&nbsp;29,&nbsp;2016</strong></div><div class="col-md-9">Steve gave the OSU Physics Colloquium.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Jan.&nbsp;26,&nbsp;2016</strong></div><div class="col-md-9">Steve gives a presentation on bladder cancer at a joint OHSU-OSU workshop on early cancer detection, at OHSU in Portland.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Jan.&nbsp;1,&nbsp;2016</strong></div><div class="col-md-9">Steve receives a Research Starter Grant award from the PhRMA Foundation (Informatics Program).  Thank you,
+              PhRMA Foundation!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;17,&nbsp;2015</strong></div><div class="col-md-9">Steve gives the Biomedical Engineering seminar at OHSU.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;16,&nbsp;2015</strong></div><div class="col-md-9">The lab's research is featured in an article on personalized medicine in <em>Momentum!</em>, the OSU College of Engineering magazine.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;14,&nbsp;2015</strong></div><div class="col-md-9">Steve is designated a Senior Member of the International Society for Computational Biology (ISCB).</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Nov.&nbsp;23,&nbsp;2015</strong></div><div class="col-md-9">The Beaver Genome Project is successfully crowdfunded!  The project's progress will be documented on the <a target="_blank" href="http://cgrb.oregonstate.edu/beaver-genome-project">Beaver Genome Project Website</a>.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Nov.&nbsp;12,&nbsp;2015</strong></div><div class="col-md-9">Steve presents research (in collaboration with Shay Bracha) on bladder cancer at the NIH Big Data to Knowledge (BD2K) All-Hands Meeting in Bethesda, MD.</div></div> 
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Sep.&nbsp;23,&nbsp;2015</strong></div><div class="col-md-9">The Beaver Genome Project is featured in the <em>This week in science</em> column in the journal <a href="http://www.nature.com/news/the-week-in-science-18-24-september-2015-1.18402?WT.mc_id=TWT_NatureNews" target="_blank">Nature</a>. </div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Sep.&nbsp;16,&nbsp;2015</strong></div><div class="col-md-9">Together with the CGRB and with help from the Oregon Zoo, we are launching a crowdfunding campaign for the Beaver Genome Project. </div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Aug.&nbsp;14,&nbsp;2015</strong></div><div class="col-md-9">Yao Yao and Zheng Liu have joined the lab.  Welcome, Yao and Zheng!</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Jun.&nbsp;24,&nbsp;2015</strong></div><div class="col-md-9">Our <a href="https://doi.org/10.1093/bioinformatics/btv391" target="_blank">article</a> on DNA shape has been accepted for publication in Bioinformatics. The
+              <code>regshape</code> software package is available on the <a target="_blank" href="http://github.com/ramseylab">Ramsey Lab GitHub page</a>.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Jun.&nbsp;16,&nbsp;2015</strong></div><div class="col-md-9">Satpreet Singh has joined the lab as a summer graduate assistant.  Welcome, Satpreet!</div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Jun.&nbsp;2,&nbsp;2015</strong></div><div class="col-md-9">Stephen gave a seminar for the students in the OSU Aging Sciences IGERT program.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Jun.&nbsp;1,&nbsp;2015</strong></div><div class="col-md-9">Jun He has joined the lab. Welcome, Jun!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>May.&nbsp;21,&nbsp;2015</strong></div><div class="col-md-9">Stephen gave the OSU Department of Pharmaceutical Sciences Research
+              Seminar.</div></div>
+          
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Apr.&nbsp;10,&nbsp;2015</strong></div><div class="col-md-9">Stephen represented OSU at the NSF/USENIX Big Data Regional Innovation
+              Hub meeting in Salt Lake City, Utah.
+          </div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Mar.&nbsp;6,&nbsp;2015</strong></div><div class="col-md-9">Stephen
+              gave a guest lecture on genetic variation in
+              BB485/585.
+          </div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Mar.&nbsp;4,&nbsp;2015</strong></div><div class="col-md-9">Ilya
+              Shmulevich visited from the
+              Institute for Systems Biology.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Feb.&nbsp;26,&nbsp;2015</strong></div><div class="col-md-9">Our collaboration's' article
+              on smooth muscle foam cells is the online "Editor's Pick" for March 2015 and it is highlighted in an
+              <a href="https://doi.org/10.1161/ATVBAHA.115.305225" target="_blank" >editorial</a> in the March edition of ATVB!
+          </div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Jan.&nbsp;20,&nbsp;2015</strong></div><div class="col-md-9">Dan
+              Zak visits from the Center for Infectious Disease Research.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Jan.&nbsp;15,&nbsp;2015</strong></div><div class="col-md-9">Stephen
+              gave a research presentation at
+              the Institute for Systems
+              Biology in Seattle.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;24,&nbsp;2014</strong></div><div class="col-md-9">Our
+              jointly authored
+              paper on smooth muscle foam
+              cells (with Ed Fisher's lab at
+              NYU,
+              Joe Miano's lab at U.&nbsp;Rochester, Xiaochun Long's lab at Albany Medical
+              College, Fernando Martinez's lab
+              at Oxford, and Kathryn Moore's lab at NYU) has
+              been accepted for publication
+              by Arteriosclerosis, Thrombosis,
+              and Vascular Biology.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;23,&nbsp;2014</strong></div><div class="col-md-9">Mudra's
+              research grant
+              proposal has been funded under the
+              URISC program (one of only nine
+              awards
+              made, university-wide). Congratulations,
+              Mudra, and thank you for your
+              support, OSU Research Office!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;5,&nbsp;2014</strong></div><div class="col-md-9">Stephen
+              gave a seminar on systems biology in the course Z507, <em>What is systems biology?</em></div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;4,&nbsp;2014</strong></div><div class="col-md-9">Our
+              <a href="https://doi.org/10.1371/journal.pgen.1004828" target="_blank">manuscript</a> (with co-authors at CIDR and NYU) on a systems biology
+              approach to studying gene regulation in atherosclerosis regression has been
+              published in PLoS Genetics.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;1,&nbsp;2014</strong></div><div class="col-md-9">Stephen
+              gave a lecture on systems biology in the
+              BRR100 seminar series.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Sep.&nbsp;16,&nbsp;2014</strong></div><div class="col-md-9">Stephen
+              served on a panel discussion for the MCB 525 course
+              "Quantitative Biology".</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Nov.&nbsp;20,&nbsp;2014</strong></div><div class="col-md-9">Both
+              Alvin Yu and Mudra Choudhury have been awarded DeLoach Work Scholarships
+              from the University Honors College.  Congratulations!  And thank you,
+              for your support, UHC!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Nov.&nbsp;19,&nbsp;2014</strong></div><div class="col-md-9">Stephen
+              gave a presentation on bioinformatics and genomics in VMB&nbsp;671.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Oct.&nbsp;21,&nbsp;2014</strong></div><div class="col-md-9">Tanjin
+              Xu has joined the lab.  Welcome, Tanjin!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Sep.&nbsp;12,&nbsp;2014</strong></div><div class="col-md-9">Alvin
+              Yu's poster on his drug repurposing project was the winner of the Poster
+              Award for the undergraduate student category, at the OSU CGRB Fall
+              Conference. Congratulations, Alvin!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Aug.&nbsp;28,&nbsp;2014</strong></div><div class="col-md-9">Stephen
+              gave a research presentation at the summer workshop "Genetic, epigenetic, and functional aspects of complex diseases IV" at the <a href="http://www.uef.fi" target="_blank">University of Eastern Finland</a>.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Aug.&nbsp;27,&nbsp;2014</strong></div><div class="col-md-9">Stephen
+              gave a research seminar at the <a href="http://www.uta.fi/english/" target="_blank">University of Tampere</a> in Finland.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Jun.&nbsp;17,&nbsp;2014</strong></div><div class="col-md-9">Stephen
+              presented a poster on Holly Arnold's work on machine learning for biological
+              network analysis, at the
+              conference <a href="http://www.sbhd2014.org/" target="_blank">Systems
+                Biology of Human Disease 2014</a> in Boston.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>May&nbsp;28,&nbsp;2014</strong></div><div class="col-md-9">Stephen was a guest instructor in the course Molecular Host-Microbe
+              Interactions, MCB&nbsp;637.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>May&nbsp;4,&nbsp;2014</strong></div><div class="col-md-9">Stephen gave an invited talk on systems biology at the
+              <a href="http://www.pas-meeting.org/" target="_blank">Pediatrics Academic Societies meeting</a> in Vancouver, British Columbia.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Apr. 28,&nbsp;2014</strong></div><div class="col-md-9">Mudra Choudhury has joined the lab.  Welcome, Mudra!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Apr.&nbsp;14,&nbsp;2014</strong></div><div class="col-md-9">Manuscript "Multiscale representation of genomic signals" has been published <a href="https://doi.org/10.1038/nmeth.2924" target="_blank">online</a> in Nature Methods (with Theo Knijnenburg, Ilya Shmulevich, and colleagues at Institute for Systems Biology and collaborators at TU-Delft, NKI, USC, and UCLA).</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Apr.&nbsp;7,&nbsp;2014</strong></div><div class="col-md-9">Stephen gave a presentation entitled "An integrative computational systems biology approach to mapping gene regulatory networks" at the <a href="http://springconference.cgrb.oregonstate.edu" target="_blank">2014 CGRB Spring Conference</a> at OSU.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Mar. 16,&nbsp;2014</strong></div><div class="col-md-9">Alvin Yu has joined the lab.  Welcome, Alvin!</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;2013</strong></div><div class="col-md-9">The
+              <a href="http://www.mcb.oregonstate.edu" target="_blank">Molecular and Cellular Biology Program</a> has approved Stephen's
+              appointment to their graduate faculty.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Dec.&nbsp;2013</strong></div><div class="col-md-9">Laboratory renovations of the first floor in Dryden Hall are complete, and as a result, we
+              now have our lab space on the third floor of Dryden Hall.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Oct.&nbsp;2013</strong></div><div class="col-md-9">The <a href="http://cgrb.oregonstate.edu" target="_blank">Center for Genome Research and
+                Biocomputing</a> has designated Stephen as a CGRB faculty affiliate.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>Sep.&nbsp;2013</strong></div><div class="col-md-9">The lab website is up and running, at lab.saramsey.org.</div></div>
+
+          <div class="divider"></div>
+          <div class="row"><div class="col-md-3"><strong>May&nbsp;2013</strong></div><div class="col-md-9">Stephen gives an invited talk at the McGill Systems Biology Atherosclerosis Symposium in Montr&eacute;al, Qu&eacute;bec.</div></div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="Publications">
+
+      
+      <div class="table-responsive">
+        
+        <div class="container">
+          <div class="divider"></div>
+          
+          <h4>Stephen Ramsey's Peer-Reviewed Publications</h4>
+
+          <p>
+            Bibliometric data are available at: <a target="_blank" href="http://scholar.google.com/citations?user=286qVQYAAAAJ">Google Scholar</a>.
+          </p>
+
+          <!--         <div class="row">
+                       <div class="col-md-4">Reference</div>
+                       <div class="col-md-4">Title</div>
+                       <div class="col-md-3">Author(s)</div>
+                       <div class="col-md-1">Link</div>
+          </div> -->
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Translat Oncol</span><br />
+              2018</div>
+            <div class="col-md-4"><em>A preliminary proteomic investigation of
+            circulating exosomes and discovery of biomarkers associated with the
+            progression of osteosarcoma in a clinical model of spontaneous
+            disease</em></div>
+            <div class="col-md-3">
+              Brady&nbsp;JV, Troyer&nbsp;RM, <strong>Ramsey&nbsp;SA,</strong> Leeper&nbsp;H, Yang&nbsp;L, Maier&nbsp;CS, Goodall&nbsp;CP, Ruby&nbsp;CE, Albarqic&nbsp;HA, Taratula&nbsp;O, Bracha&nbsp;S
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.1016/j.tranon.2018.07.004" target="_blank">[link]</a>
+            </div>
+          </div>
+          
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Cell Molec Life Sci</span><br />
+              2018</div>
+            <div class="col-md-4"><em>Differential gene regulatory networks in development and disease</em></div>
+            <div class="col-md-3">
+              Singh&nbsp;AJ, <strong>Ramsey&nbsp;SA</strong>, Filtz&nbsp;TM, Kioussi&nbsp;C.
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.1038/s41598-018-25998-1" target="_blank">[link]</a>
+            </div>
+          </div>
+          
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">PLOS ONE</span><br />
+              2017</div>
+            <div class="col-md-4"><em>Identifying novel transcription factors involved in the inflammatory response by using binding site motif scanning in genomic regions defined by histone acetylation</em></div>
+            <div class="col-md-3">
+              Askovich&nbsp;P, <strong>Ramsey&nbsp;SA</strong>, Diercks&nbsp;AH, Kennedy&nbsp;KA, Knijnenburg&nbsp;T, Aderem&nbsp;A.
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.1371/journal.pone.0184850" target="_blank">[link]</a>
+            </div>
+          </div>
+          
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">ACM&nbsp;BCB Proceedings</span><br />
+              2017</div>
+            <div class="col-md-4"><em>CERENKOV: Computational elucidation of the regulatory noncoding variome</em></div>
+            <div class="col-md-3">
+              Yao&nbsp;Y<sup>*</sup>, Liu&nbsp;Z<sup>*</sup>, Singh&nbsp;S, Wei&nbsp;Q, <strong>Ramsey&nbsp;SA</strong>
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.1145/3107411.3107414" target="_blank">[link]</a><br />
+              <a href="https://github.com/ramseylab/cerenkov" target="_blank">[software]</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">J. Clinical Investigation</span><br />
+              2017</div>
+            <div class="col-md-4"><em>Recruitment of Ly6C<sup>high</sup> monocytes and their conversion to M2 macrophages are required for regression of atherosclerosis in mice</em></div>
+            <div class="col-md-3">
+              Rahman&nbsp;K, Vengrenyuk&nbsp;Y, <strong>Ramsey&nbsp;SA</strong>, Rotllan&nbsp;Vila&nbsp;N, Girgis&nbsp;NM, Liu&nbsp;J,
+              Gusarova&nbsp;V, Gromada&nbsp;J, Weinstock&nbsp;A, Moore&nbsp;KJ, Loke&nbsp;P, Fisher&nbsp;EA
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.1172/JCI75005" target="_blank">[link]</a>
+            </div>
+          </div>
+          
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Genes Chromosom Cancer.</span><br />
+              2017</div>
+            <div class="col-md-4"><em>Cross-species analysis of the canine and human bladder cancer transcriptome and exome</em></div>
+            <div class="col-md-3">
+              <strong>Ramsey&nbsp;SA</strong>, Xu&nbsp;T, Goodall&nbsp;C, Rhodes&nbsp;AC, Kashyap&nbsp;A, He&nbsp;J, Bracha&nbsp;S.
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.1002/gcc.22441" target="_blank">[link]</a>
+            </div>
+          </div>
+          
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Gene Regul Syst Biol.</span><br />
+              2016</div>
+            <div class="col-md-4"><em>Identifying cell type-specific transcription factors by integrating ChIP-seq and eQTL data&ndash;application to monocyte gene regulation</em></div>
+            <div class="col-md-3">
+              Choudhury&nbsp;M, <strong>Ramsey&nbsp;SA</strong>
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.4137/GRSB.S40768" target="_blank">[link]</a><br />
+              <a href="https://github.com/ramseylab/eqtlchiptest" target="_blank">[software]</a>
+            </div>
+          </div>
+          
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Interdiscip Sci Comp Life Sci.</span><br />
+              2016</div>
+            <div class="col-md-4"><em>A computational systems biology approach for identifying candidate drugs for repositioning for cardiovascular disease</em></div>
+            <div class="col-md-3">
+              Yu&nbsp;AZ, <strong>Ramsey&nbsp;SA</strong>
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.1007/s12539-016-0194-3" target="_blank">[link]</a><br />
+              <a href="https://github.com/ramseylab/drugscan" target="_blank">[software]</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Bioinform Biol Insights.</span><br />
+              2016</div>
+            <div class="col-md-4"><em>An empirical prior improves accuracy for Bayesian estimation of transcription factor binding site frequencies within gene promoters</em></div>
+            <div class="col-md-3">
+              <strong>Ramsey&nbsp;SA</strong>
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.4137/BBI.S29330" target="_blank">[link]</a><br />
+              <a href="https://github.com/ramseylab/tfbsincbeta" target="_blank">[software]</a>
+            </div>
+          </div>
+          
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">ACM BCB Proceedings</span><br />
+              2016</div>
+            <div class="col-md-4"><em>Exploration of regression models for cancer noncoding mutation recurrence</em></div>
+            <div class="col-md-3">
+              Xu&nbsp;T, <strong>Ramsey&nbsp;SA</strong>
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.1145/2975167.2985684" target="_blank">[link]</a>
+            </div>
+          </div>
+          
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Analytical Chemistry</span><br />
+              2016</div>
+            <div class="col-md-4"><em>Investigation of reagent delivery formats in a multivalent malaria sandwich immunoassay and implications for assay performance</em></div>
+            <div class="col-md-3">
+              Liang&nbsp;T, Robinson&nbsp;R, Houghtaling&nbsp;J, Fridley&nbsp;G, <strong>Ramsey&nbsp;SA</strong>,
+              Fu&nbsp;E
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.1021/acs.analchem.5b04222" target="_blank">[link]</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Bioinformatics</span><br />
+              2015</div>
+            <div class="col-md-4"><em>A DNA shape-based regulatory score improves position-weight matrix-based recognition of transcription factor binding sites</em></div>
+            <div class="col-md-3">
+              Yang&nbsp;J,
+              <strong>Ramsey&nbsp;SA</strong>
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.1093/bioinformatics/btv391" target="_blank">[link]</a><br />
+              <a href="https://github.com/ramseylab/regshape" target="_blank">[software]</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Bioinform Biol Insights.</span><br />
+              2015</div>
+            <div class="col-md-4"><em>Reverse enGENEering of regulatory networks from Big Data: a roadmap for biologists</em></div>
+            <div class="col-md-3">
+              Dong&nbsp;X,
+              Yambartsev&nbsp;A,
+              <strong>Ramsey&nbsp;SA,</strong>
+              Thomas&nbsp;L,
+              Shulzhenko&nbsp;N,
+              Morgun&nbsp;A
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.4137/BBI.S12467" target="_blank">[link]</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">EMBO Journal</span><br />
+              2015</div>
+            <div class="col-md-4"><em>An LXR-NCOA5 complex directs inflammatory crosstalk-dependent repression of cholesterol efflux</em></div>
+            <div class="col-md-3">
+              Gillespie&nbsp;MA,
+              Gold&nbsp;E,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Podolsky&nbsp;I,
+              Aderem&nbsp;A,
+              Ranish&nbsp;J
+            </div>
+            <div class="col-md-1">
+              <a href="https://doi.org/10.15252/embj.201489819" target="_blank">[link]</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Arterioscler&nbsp;Thromb&nbsp;Vasc&nbsp;Biol.</span><br />
+              2015</div>
+            <div class="col-md-4"><em>Cholesterol loading re-programs the miR-143/145-myocardin axis to convert aortic smooth muscle cells to a dysfunctional macrophage-like phenotype</em></div>
+            <div class="col-md-3">
+              Vengrenyuk&nbsp;Y,
+              Nishi&nbsp;H,
+              Long&nbsp;X,
+              Ouimet&nbsp;M,
+              Savji&nbsp;N,
+              Martinez&nbsp;FO,
+              Cassella&nbsp;C,
+              Moore&nbsp;KJ,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Miano&nbsp;JM,
+              Fisher&nbsp;EA
+            </div>
+            <div class="col-md-1">
+              <a  href="https://doi.org/10.1161/ATVBAHA.114.304029" target="_blank">[link]</a><br />
+              <a  href="https://doi.org/10.1161/ATVBAHA.115.305225" target="_blank">Featured editorial</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">PLoS&nbsp;Genetics</span><br />
+              2014</div>
+            <div class="col-md-4"><em>Epigenome-guided analysis of the transcriptome of plaque macrophages
+                during atherosclerosis regression reveals activation of the Wnt signaling
+                pathway</em></div>
+            <div class="col-md-3">
+              <strong>Ramsey&nbsp;SA</strong><sup>*</sup>,
+              Vengrenyuk&nbsp;Y<sup>*</sup>,
+              Menon&nbsp;P,
+              Podolsky&nbsp;I,
+              Feig&nbsp;JE,
+              Aderem&nbsp;A,
+              Fisher&nbsp;EA,
+              Gold&nbsp;ES
+            </div>
+            <div class="col-md-1">
+              <a  href="https://doi.org/10.1371/journal.pgen.1004828" target="_blank">[link]</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Nature Methods</span><br />
+              2014</div>
+            <div class="col-md-4"><em>Multiscale representation of genomic signals</em></div>
+            <div class="col-md-3">
+              Knijnenburg&nbsp;TA,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Berman&nbsp;BP,
+              Kennedy&nbsp;KA,
+              Smit&nbsp;AFA,
+              Wessels&nbsp;LFA,
+              Laird&nbsp;PW,
+              Aderem&nbsp;A,
+              Shmulevich&nbsp;I
+            </div>
+            <div class="col-md-1">
+              <a  target="_blank" href="https://doi.org/10.1038/nmeth.2924">[link]</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">PLoS ONE</span><br />
+              2013</div>
+            <div class="col-md-4"><em>Urokinase plasminogen activator induces pro-fibrotic/M2 phenotype in murine cardiac macrophages</em></div>
+            <div class="col-md-3">
+              Meznarich&nbsp;J,
+              Malchodi&nbsp;L,
+              Helterline&nbsp;D,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Bertko&nbsp;K,
+              Plummer&nbsp;T,
+              Plawman&nbsp;A,
+              Gold&nbsp;E,
+              Stempien-Otero&nbsp;A
+            </div>
+            <div class="col-md-1">
+              <a  target="_blank" href="https://doi.org/10.1371/journal.pone.0057837">[link]</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">J. Experimental Medicine</span><br />
+              2012</div>
+            <div class="col-md-4"><em>ATF3 protects against atherosclerosis by suppressing 25-hydroxycholesterol-induced lipid body formation</em></div>
+            <div class="col-md-3">
+              Gold&nbsp;ES<sup>*</sup>,
+              <strong>Ramsey&nbsp;SA</strong><sup>*</sup>,
+              Sartain&nbsp;MJ,
+              Selinummi&nbsp;J,
+              Podolsky&nbsp;I,
+              Rodriguez&nbsp;DJ,
+              Moritz&nbsp;RL,
+              Aderem&nbsp;A</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1084/jem.20111202">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Molec Syst Biol.</span><br />
+              2012</div>
+            <div class="col-md-4"><em>Asymmetric positive feedback loops reliably control biological responses</em></div>
+            <div class="col-md-3">
+              Ratushny&nbsp;AV,
+              Saleem&nbsp;RA,
+              Sitko&nbsp;K,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Aitchison&nbsp;JD
+            </div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1038/msb.2012.10">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">J. Biol Chem.</span><br />
+              2011</div>
+            <div class="col-md-4"><em>Mechanisms of urokinase plasminogen activator (uPA)-mediated atherosclerosis: Role of the uPA receptor and S100A8/A9 proteins</em></div>
+            <div class="col-md-3">
+              Farris&nbsp;SD,
+              Hu&nbsp;JH,
+              Krishnan&nbsp;R,
+              Emery&nbsp;I,
+              Chu&nbsp;T,
+              Du&nbsp;L,
+              Kremen&nbsp;M,
+              Dichek&nbsp;HL,
+              Gold&nbsp;E,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Dichek&nbsp;DA</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1074/jbc.M110.202135">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Methods Molec. Biol.</span><br />
+              2011</div>
+            <div class="col-md-4"><em>Mathematical modeling of biomolecular network dynamics</em></div>
+            <div class="col-md-3">
+              Ratushny&nbsp;AV,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Aitchison&nbsp;JD</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1007/978-1-61779-276-2_21">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Microfluidics &amp; Nanofluidics</span><br />2011</div>
+            <div class="col-md-4"><em>Transport in two-dimensional paper networks</em></div>
+            <div class="col-md-3">
+              Fu&nbsp;E,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Kauffman&nbsp;P,
+              Lutz&nbsp;B,
+              Yager&nbsp;P</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1007/s10404-010-0643-y" >[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Analytical&nbsp;Chemistry</span><br />
+              2011</div>
+            <div class="col-md-4"><em>Enhanced sensitivity of lateral flow tests using a two-dimensional paper network format</em></div>
+            <div class="col-md-3">
+              Fu&nbsp;E,
+              Liang&nbsp;T,
+              Houghtaling&nbsp;J,
+              Ramachandran&nbsp;S,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Lutz&nbsp;B,
+              Yager&nbsp;P
+            </div>
+            <div class="col-md-1">
+              <a  target="_blank" href="https://doi.org/10.1021/ac201950g">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">J. Cell Science</span><br />
+              2010</div>
+            <div class="col-md-4"><em>ATF3, an adaptive-response gene, enhances TGF&beta; signaling and cancer-initiating cell features in breast cancer cells</em></div>
+            <div class="col-md-3">
+              Yin&nbsp;X,
+              Wolford&nbsp;CC,
+              Chang&nbsp;YS,
+              McConoughey&nbsp;SJ,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Aderem&nbsp;A,
+              Hai&nbsp;T</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1242/jcs.064915" >[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Bioinformatics</span><br />
+              2010</div>
+            <div class="col-md-4"><em>Genome-wide histone acetylation data improve prediction of mammalian transcription factor
+                binding sites</em></div>
+            <div class="col-md-3">
+              <strong>Ramsey&nbsp;SA</strong>,
+              Knijnenburg&nbsp;TA,
+              Kennedy&nbsp;KA,
+              Zak&nbsp;DE,
+              Gilchrist&nbsp;M,
+              Gold&nbsp;ES,
+              Johnson&nbsp;CD,
+              Lampano&nbsp;AE,
+              Litvak&nbsp;V,
+              Navarro&nbsp;G,
+              Stolyar&nbsp;T,
+              Aderem&nbsp;A,
+              Shmulevich&nbsp;I</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1093/bioinformatics/btq405" >[link]</a><br />
+              <a href="https://github.com/ramseylab/pltfbsmotif" target="_blank">[software]</a><br />
+              [Corrected <a  target="_blank" href="corrigenda/Ramsey_HAcTF_Supp_corrected.pdf">supplement. doc.</a>]
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">BMC&nbsp;Bioinformatics</span><br />
+              2010</div>
+            <div class="col-md-4"><em>SeqAdapt: an adaptable system for the tracking, storage, and analysis of high-throughput
+                sequencing experiments</em></div>
+            <div class="col-md-3">
+              Burdick&nbsp;DB,
+              Cavnor&nbsp;CC,
+              Handcock&nbsp;J,
+              Killcoyne&nbsp;S,
+              Lin&nbsp;J,
+              Marzolf&nbsp;B,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Rovira&nbsp;H,
+              Bressler&nbsp;R,
+              Shmulevich&nbsp;I,
+              Boyle&nbsp;J</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1186/1471-2105-11-377" >[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">EMBO&nbsp;Molecular&nbsp;Medicine</span><br />
+              2010</div>
+            <div class="col-md-4"><em>A systems biology approach to understanding atherosclerosis</em></div>
+            <div class="col-md-3">
+              <strong>Ramsey&nbsp;SA</strong>,
+              Gold&nbsp;ES,
+              Aderem&nbsp;A</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1002/emmm.201000063" >[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Analytical&nbsp;Chemistry</span><br />
+              2009</div>
+            <div class="col-md-4"><em>Modeling of a competitive microfluidic heterogeneous immunoassay: sensitivity of the assay response to varying system parameters</em></div>
+            <div class="col-md-3">
+              Fu&nbsp;E,
+              Nelson&nbsp;KE,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Foley&nbsp;JO,
+              Helton&nbsp;K,
+              Yager&nbsp;P</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1021/ac802672v" >[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Nature&nbsp;Immunology</span><br />
+              2009</div>
+            <div class="col-md-4"><em>Function of C/EBP&delta; in a regulatory circuit that discriminates between transient and persistent TLR4-induced signals</em></div>
+            <div class="col-md-3">
+              Litvak&nbsp;V,
+              <strong>Ramsey&nbsp;SA,</strong>
+              Rust&nbsp;AG,
+              Zak&nbsp;DE,
+              Kennedy&nbsp;KA,
+              Lampano&nbsp;AE,
+              Nykter&nbsp;M,
+              Shmulevich&nbsp;I,
+              Aderem&nbsp;A</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1038/ni.1721" >[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Proc Natl Acad Sci U&nbsp;S&nbsp;A.</span><br />
+              2009</div>
+            <div class="col-md-4"><em>Dynamic analysis of MAPK signaling using a high-throughput microfluidic single-cell imaging platform</em></div>
+            <div class="col-md-3">
+              Taylor&nbsp;RJ,
+              Falconnet&nbsp;D,
+              Niemist&ouml;&nbsp;A,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Prinz&nbsp;S,
+              Shmulevich&nbsp;I,
+              Galitski&nbsp;T,
+              Hansen&nbsp;CL</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1073/pnas.0813416106" >[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Biophysical Journal</span><br />
+              2008</div>
+            <div class="col-md-4"><em>Control of transcriptional variability by overlapping feed-forward regulatory motifs</em></div>
+            <div class="col-md-3">Ratushny&nbsp;AV<sup>*</sup>,
+              <strong>Ramsey&nbsp;SA</strong><sup>*</sup>,
+              Roda&nbsp;O,
+              Wan&nbsp;Y,
+              Smith&nbsp;JJ,
+              Aitchison&nbsp;JD</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1529/biophysj.108.134064" >[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">PLoS Comput Biol.</span><br />
+              2008</div>
+            <div class="col-md-4"><em>Uncovering a macrophage transcriptional program by integrating evidence from motif scanning and expression dynamics</em></div>
+            <div class="col-md-3"><strong>Ramsey&nbsp;SA</strong>,
+              Klemm&nbsp;SL,
+              Zak&nbsp;DE,
+              Kennedy&nbsp;KA,
+              Thorsson&nbsp;V,
+              Li&nbsp;B,
+              Gilchrist&nbsp;M,
+              Gold&nbsp;ES,
+              Johnson&nbsp;CD,
+              Litvak&nbsp;V,
+              Navarro&nbsp;G,
+              Roach&nbsp;JC,
+              Rosenberger&nbsp;CM,
+              Rust&nbsp;AG,
+              Yudkovsky&nbsp;N,
+              Aderem&nbsp;A,
+              Shmulevich&nbsp;I</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1371/journal.pcbi.1000021" >[link]</a><br />
+              <a href="https://github.com/ramseylab/tlcnet" target="_blank">[software]</a><br />
+              [Corrected<br /> <a  target="_blank" href="corrigenda/PLoSCompBiol_Table_S17.doc">Table S17</a>]
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Proc Natl Acad Sci U&nbsp;S&nbsp;A.</span><br />
+              2008</div>
+            <div class="col-md-4"><em>Gene expression dynamics in the macrophage exhibit criticality</em></div>
+            <div class="col-md-3">Nykter&nbsp;M,
+              Price&nbsp;ND,
+              Aldana&nbsp;M,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Kauffman&nbsp;SA,
+              Hood&nbsp;L,
+              Yli-Harja&nbsp;O,
+              Shmulevich&nbsp;I</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1073/pnas.0711525105">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Analytical Chimica Acta</span><br />
+              2007</div>
+            <div class="col-md-4"><em>Dependence of the signal amplification potential of colloidal gold nanoparticles on
+                resonance wavelength in surface plasmon resonance-based detection</em></div>
+            <div class="col-md-3">Fu&nbsp;ES,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Yager&nbsp;P</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1016/j.aca.2007.07.056">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Molecular Systems Biology</span><br />
+              2007</div>
+            <div class="col-md-4"><em>Transcriptional responses to fatty acid are coordinated by combinatorial control</em></div>
+            <div class="col-md-3">Smith&nbsp;JJ,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Marelli&nbsp;M,
+              Marzolf&nbsp;B,
+              Hwang&nbsp;D,
+              Saleem&nbsp;RA,
+              Rachubinski&nbsp;RA,
+              Aitchison&nbsp;JD</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1038/msb4100157">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">PLoS ONE</span><br />
+              2007</div>
+            <div class="col-md-4"><em>Control of signaling in a MAP-kinase pathway by an RNA-binding protein</em></div>
+            <div class="col-md-3">
+              Prinz&nbsp;S,
+              Aldridge&nbsp;C,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Taylor&nbsp;RJ,
+              Galitski&nbsp;T</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1371/journal.pone.0000249">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Sens Act B Chem.</span><br />
+              2007</div>
+            <div class="col-md-4"><em>Resonance wavelength-dependent signal of absorptive particles in surface plasmon resonance-based detection</em></div>
+            <div class="col-md-3">
+              Fu&nbsp;E,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Chen&nbsp;J,
+              Chinowsky&nbsp;TM,
+              Wiley&nbsp;B,
+              Xia&nbsp;Y,
+              Yager&nbsp;P</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1016/j.snb.2006.09.059">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Rev Sci Inst.</span><br />
+              2006</div>
+            <div class="col-md-4"><em>One-dimensional surface plasmon resonance imaging system using wavelength interrogation</em></div>
+            <div class="col-md-3">
+              Fu&nbsp;E,
+              <strong>Ramsey&nbsp;SA</strong>,
+              Thariani&nbsp;R,
+              Yager&nbsp;P</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1063/1.2227646">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Nature Genetics</span><br />
+              2006</div>
+            <div class="col-md-4"><em>Dual feedback loops in the GAL regulon suppress cellular heterogeneity in yeast</em></div>
+            <div class="col-md-3">
+              <strong>Ramsey&nbsp;SA</strong>,
+              Smith&nbsp;JJ,
+              Orrell&nbsp;D,
+              Marelli&nbsp;M,
+              Petersen&nbsp;TW,
+              de&nbsp;Atauri&nbsp;P,
+              Bolouri&nbsp;H,
+              Aitchison&nbsp;JD</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1038/ng1869">[link]</a><br />
+              <a href="downloads/GalNoiseModel.zip" target="_blank">[model]</a><br />
+              [Corrected <a  target="_blank" href="corrigenda/GalNoiseSuppNote.pdf">supplementary note</a>]
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Physica D</span><br />
+              2006</div>
+            <div class="col-md-4"><em>Feedback control of stochastic noise in the yeast galactose
+                utilization pathway</em></div>
+            <div class="col-md-3">
+              Orrell&nbsp;D,
+              <strong>Ramsey&nbsp;S</strong>,
+              Marelli&nbsp;M,
+              Smith&nbsp;JJ,
+              Petersen&nbsp;TW,
+              de&nbsp;Atauri&nbsp;P,
+              Aitchison&nbsp;JD,
+              Bolouri&nbsp;H</div>
+            <div class="col-md-1">
+              <a  target="_blank" href="https://doi.org/10.1016/j.physd.2006.03.010">[link]</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Philos Trans R Soc Lond B</span><br />
+              2006</div>
+            <div class="col-md-4"><em>Transcriptional noise and cellular heterogeneity in mammalian
+                macrophages</em></div>
+            <div class="col-md-3">
+              <strong>Ramsey&nbsp;S</strong>,
+              Ozinsky&nbsp;A,
+              Clark&nbsp;A,
+              Smith&nbsp;KD,
+              de&nbsp;Atauri&nbsp;P,
+              Thorsson&nbsp;V,
+              Orrell&nbsp;D,
+              Bolouri&nbsp;H</div>
+            <div class="col-md-1">
+              <a  target="_blank" href="https://doi.org/10.1098/rstb.2005.1808">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Proc Natl Acad Sci U&nbsp;S&nbsp;A.</span><br />
+              2005</div>
+            <div class="col-md-4"><em>A data integration methodology for systems biology</em></div>
+            <div class="col-md-3">
+              Hwang&nbsp;D,
+              Rust&nbsp;AG,
+              <strong>Ramsey&nbsp;S,</strong>
+              Smith&nbsp;JJ,
+              Leslie&nbsp;DM,
+              Weston&nbsp;AD,
+              de&nbsp;Atauri&nbsp;P,
+              Aitchison&nbsp;JD,
+              Hood&nbsp;L,
+              Siegel&nbsp;AF,
+              Bolouri&nbsp;H</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1073/pnas.0508647102">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Proc Natl Acad Sci U&nbsp;S&nbsp;A.</span><br />
+              2005</div>
+            <div class="col-md-4"><em>A data integration methodology for systems biology: experimental
+                validation</em></div>
+            <div class="col-md-3">Hwang&nbsp;D,
+              Smith&nbsp;JJ,
+              Leslie&nbsp;DM,
+              Weston&nbsp;AD,
+              Rust&nbsp;AG,
+              <strong>Ramsey&nbsp;S</strong>,
+              de&nbsp;Atauri&nbsp;P,
+              Siegel&nbsp;AF,
+              Bolouri&nbsp;H,
+              Aitchison&nbsp;JD,
+              Hood&nbsp;L
+            </div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1073/pnas.0508649102">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">J Bioinform Comp Biol.</span><br />
+              2005</div>
+            <div class="col-md-4"><em>Dizzy:  Stochastic simulations of large-scale genetic regulatory
+                networks</em></div>
+            <div class="col-md-3"><strong>Ramsey&nbsp;S</strong>, Orrell&nbsp;D, Bolouri&nbsp;H</div>
+            <div class="col-md-1">
+              <a  target="_blank" href="https://doi.org/10.1142/S0219720005001132">[link]</a><br />
+              <a  target="_blank" href="https://doi.org/10.1142/S0219720005001144">[supplement]</a><br />
+              <a href="https://github.com/ramseylab/Dizzy" target="_blank">[software]</a>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Bioinformatics</span><br />
+              2005</div>
+            <div class="col-md-4"><em>A method for estimating stochastic noise in large genetic
+                regulatory networks</em></div>
+            <div class="col-md-3">Orrell&nbsp;D, <strong>Ramsey&nbsp;S</strong>, de&nbsp;Atauri&nbsp;P, Bolouri&nbsp;H</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1093/bioinformatics/bth379">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Biochemical Journal</span><br />
+              2005</div>
+            <div class="col-md-4"><em>Is the regulation of galactose-1-phosphate
+                tuned against gene expression noise?</em></div>
+            <div class="col-md-3">de&nbsp;Atauri&nbsp;P, Orrell&nbsp;D, <strong>Ramsey&nbsp;S</strong>, Bolouri&nbsp;H</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1042/BJ20041001">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Syst Biol (Stevenage).</span><br />
+              2004</div>
+            <div class="col-md-4"><em>Evolution of "design" principles in biochemical networks</em></div>
+            <div class="col-md-3">de&nbsp;Atauri&nbsp;P, Orrell&nbsp;D, <strong>Ramsey&nbsp;S</strong>, Bolouri&nbsp;H</div>
+            <div class="col-md-1">
+              <a  target="_blank" href="https://doi.org/10.1049/sb:20045013">[link]</a></div>
+          </div>
+        </div>
+        
+      </div>
+
+
+      <div class="container">
+        <div class="divider"></div>
+        <h4>Other Publications or Works</h4>
+
+        <!--
+            <div class="row">
+              <div class="col-md-4">Reference</div>
+              <div class="col-md-4">Title</div>
+              <div class="col-md-3">Author(s)</div>
+              <div class="col-md-1">Link</div>
+            </div> -->
+
+        <div class="divider"></div>
+        
+        <div class="row">
+          <div class="col-md-4"><span class="journal">Methods Mol Biol.</span><br />2017</div>
+          <div class="col-md-4"><em>A Method for cross-species visualization and analysis of RNA-Sequence data.</em> Chapter in
+            the book <em>Systems Biology</em> (Mariano Bizzarri (ed.)</div>
+          <div class="col-md-3">
+            <strong>Ramsey&nbsp;S</strong></div>
+          <div class="col-md-1"><a href="https://doi.org/10.1007/978-1-4939-7456-6_14" target="_blank">[link]</a></div>
+        </div>
+        
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-4"><span class="journal">U.S. Patent</span><br />2009</div>
+          <div class="col-md-4"><em>Method and system for directing requests for content to a content server based on
+              network performance.</em>  (U.S.&nbsp;patent&nbsp;number&nbsp;7555542) </div>
+          <div class="col-md-3">
+            Ayers&nbsp;M,
+            Black&nbsp;BJ,
+            Brown&nbsp;C,
+            Carlson&nbsp;J,
+            Cohn&nbsp;D,
+            Laird&nbsp;S,
+            Miller&nbsp;J,
+            Ronen&nbsp;O,
+            Schachter&nbsp;P,
+            Stiffelman&nbsp;O,
+            <strong>Ramsey&nbsp;S</strong></div>
+          <div class="col-md-1">&nbsp;</div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-4"><span class="journal">U.S. Patent</span><br />2005</div>
+          <div class="col-md-4"><em>Method and system for optimizing routing through multiple available Internet route providers.</em> (U.S.&nbsp;patent&nbsp;number&nbsp;6981055)</div>
+          <div class="col-md-3">
+            Ahuja&nbsp;A,
+            Ayers&nbsp;M,
+            Black&nbsp;B,
+            Brown&nbsp;C,
+            Cohn&nbsp;DT,
+            <strong>Ramsey&nbsp;S</strong>,
+            Ronen&nbsp;O,
+            Schachter&nbsp;PJ,
+            Stiffelman&nbsp;OB,
+            Wheeler&nbsp;CD</div>
+          <div class="col-md-1">&nbsp;</div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-4"><span class="journal">arXiv.org</span><br />1997</div>
+          <div class="col-md-4"><em>Nonequilibrium dynamics of quantum fields in inflationary cosmology</em>
+            (PhD Dissertation, University of Maryland)</div>
+          <div class="col-md-3"><strong>Ramsey&nbsp;SA</strong> (PhD advisor:  Bei-Lok Hu)</div>
+          <div class="col-md-1"><a  target="_blank" href="http://www.arxiv.org/abs/gr-qc/0209010" >[link]</a></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-4"><span class="journal">arXiv.org</span><br />1993</div>
+          <div class="col-md-4"><em>Some statistics for measuring large-scale structure</em></div>
+          <div class="col-md-3">
+            Brandenberger&nbsp;RH,
+            Kaplan&nbsp;DM,
+            <strong>Ramsey&nbsp;SA</strong></div>
+          <div class="col-md-1"><a  target="_blank" href="http://www.arxiv.org/abs/astro-ph/9310004">[link]</a></div>
+        </div>
+        <div class="divider"></div>
+        <p>
+          <a id="oldpubs_toggle_href" href="#Publications" onclick="javascript:toggle_oldpubs(); return false;">[show older publications ...]</a>
+        </p>
+        <p>
+          &nbsp;
+        </p>
+      </div>
+      
+      <div id="oldpubs_toggle">
+        
+
+        <div class="container">
+          <div class="divider"></div>
+          <h4>Stephen Ramsey's Peer-Reviewed Publications &ndash; Pre-2001</h4>
+
+          <!--
+              <div class="row">
+                <div class="col-md-4">Reference</div>
+                <div class="col-md-4">Title</div>
+                <div class="col-md-3">Author(s)</div>
+                <div class="col-md-3">Link</div>
+              </div>
+              -->
+          
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Int J Theo Phys.</span><br />2001</div>
+            <div class="col-md-4"><em>Interacting field theories in Robertson-Walker spacetimes:  analytic approximations</em></div>
+            <div class="col-md-3">Molina-Paris&nbsp;C, Anderson&nbsp;PR, <strong>Ramsey&nbsp;SA</strong></div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1023/A:1012938321270">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Physical&nbsp;Review&nbsp;D</span><br />2000</div>
+            <div class="col-md-4"><em>One-loop</em> &#955;&#966;<sup>4</sup><em>theory in Robertson-Walker spacetimes:
+                adiabatic regularization and analytic approximation</em></div>
+            <div class="col-md-3">Molina-Paris&nbsp;C, Anderson&nbsp;PR, <strong>Ramsey&nbsp;SA</strong></div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1103/PhysRevD.61.127501">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Physical Review D</span><br />
+              2000</div>
+            <div class="col-md-4"><em>Hydrodynamic transport functions from quantum kinetic theory</em></div>
+            <div class="col-md-3">Calzetta&nbsp;EA, Hu&nbsp;BL, <strong>Ramsey&nbsp;SA</strong></div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1103/PhysRevD.61.125013">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Physical Review D</span><br />
+              1999</div>
+            <div class="col-md-4"><em>Defect formation and Critical Dynamics in the Early Universe</em></div>
+            <div class="col-md-3">Stephens&nbsp;GJ, Calzetta&nbsp;EA, Hu&nbsp;BL, <strong>Ramsey&nbsp;SA</strong></div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1103/PhysRevD.59.045009">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Int J Theo Phys.</span><br />
+              1999</div>
+            <div class="col-md-4"><em>Nonequilibrium dynamics of quantum fields in inflationary cosmology</em></div>
+            <div class="col-md-3"><strong>Ramsey&nbsp;SA</strong></div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1023/A:1026674917504">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Physical Review D</span>
+              <br />
+              1998</div>
+            <div class="col-md-4"><em>Nonequilibrium inflaton dynamics and reheating. II.  Fermion production,
+                noise, and stochasticity</em></div>
+            <div class="col-md-3"><strong>Ramsey&nbsp;SA</strong>, Hu&nbsp;BL, Stylianopoulos&nbsp;AM</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1103/PhysRevD.57.6003">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4"><span class="journal">Physical Review D</span><br />
+              1997
+            </div>
+            <div class="col-md-4"><em>Nonequilibrium inflaton dynamics and reheating: Back reaction of
+                parametric particle creation and curved spacetime effects</em></div>
+            <div class="col-md-3"><strong>Ramsey&nbsp;SA</strong>, Hu&nbsp;BL</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1103/PhysRevD.56.678">[link]</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4">
+              <span class="journal">Physical Review D</span><br />
+              1997</div>
+            <div class="col-md-4">O(N) <em>Quantum fields in curved spacetime</em></div>
+            <div class="col-md-3"><strong>Ramsey&nbsp;SA</strong>, Hu&nbsp;BL</div>
+            <div class="col-md-1"><a  target="_blank" href="https://doi.org/10.1103/PhysRevD.56.661">[link]</a></div>
+          </div>
+        </div>
+
+        
+
+      </div>
+
+    </div>
+    
+    <div id="Academics">
+
+      <div class="container">
+
+        <div class="divider"></div>
+        <h4>Current and future teaching and guest lecturing</h4>
+
+        <div class="divider"></div>
+ 
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2018</div>
+          <div class="col-md-2"><strong>Instructor</strong></div>
+          <div class="col-md-2"><strong>CS&nbsp;340</strong></div>
+          <div class="col-md-6"><em>Introduction to databases</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Spring&nbsp;2018</div>
+          <div class="col-md-2"><strong>Instructor</strong></div>
+          <div class="col-md-2"><strong>VMB&nbsp;651</strong></div>
+          <div class="col-md-6"><em>Cancer systems biology</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Spring&nbsp;2018</div>
+          <div class="col-md-2">Instructor</div>
+          <div class="col-md-2">VMB&nbsp;722</div>
+          <div class="col-md-6"><em>Research Reading and Skills</em></div>
+        </div>
+        
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Spring&nbsp;2018</div>
+          <div class="col-md-2">Guest instructor</div>
+          <div class="col-md-2">VMB&nbsp;631</div>
+          <div class="col-md-6"><em>Mathematical modeling of biological systems</em></div>
+        </div>
+ 
+
+        <div class="divider"></div>
+        
+        <h4>Past teaching and guest lecturing</h4>
+
+       <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Winter&nbsp;2018</div>
+          <div class="col-md-2">Discussion Leader</div>
+          <div class="col-md-2">VMB&nbsp;741</div>
+          <div class="col-md-6"><em>Veterinary Integrated Problem Solving</em></div>
+        </div>      
+        
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2017</div>
+          <div class="col-md-2"><strong>Instructor</strong></div>
+          <div class="col-md-2"><strong>CS&nbsp;446/546</strong></div>
+          <div class="col-md-6"><em>Networks in computational biology</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2017</div>
+          <div class="col-md-2">Guest Lecturer</div>
+          <div class="col-md-2">VMB&nbsp;671/<br />MCB&nbsp;671</div>
+          <div class="col-md-6"><em>Molecular Tools</em></div>
+        </div>
+        
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Spring&nbsp;2017</div>
+          <div class="col-md-2"><strong>Instructor</strong></div>
+          <div class="col-md-2"><strong>VMB&nbsp;651</strong></div>
+          <div class="col-md-6"><em>Cancer systems biology</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Spring&nbsp;2017</div>
+          <div class="col-md-2">Discussion Leader</div>
+          <div class="col-md-2">VMB&nbsp;742</div>
+          <div class="col-md-6"><em>Veterinary Integrated Problem Solving</em></div>
+        </div>        
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Winter&nbsp;2017</div>
+          <div class="col-md-2">Discussion Leader</div>
+          <div class="col-md-2">VMB&nbsp;741</div>
+          <div class="col-md-6"><em>Veterinary Integrated Problem Solving</em></div>
+        </div>
+        
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2016</div>
+          <div class="col-md-2"><strong>Instructor</strong></div>
+          <div class="col-md-2"><strong>CS&nbsp;446/519</strong></div>
+          <div class="col-md-6"><em>Networks in computational biology</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2016</div>
+          <div class="col-md-2">Guest Lecturer</div>
+          <div class="col-md-2">VMB&nbsp;671/<br />MCB&nbsp;671</div>
+          <div class="col-md-6"><em>Molecular Tools</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Spring&nbsp;2016</div>
+          <div class="col-md-2">Guest Instructor</div>
+          <div class="col-md-2">MCB&nbsp;637</div>
+          <div class="col-md-6"><em>Molecular host-microbe interactions</em></div>
+        </div>
+        
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Spring&nbsp;2016</div>
+          <div class="col-md-2">Guest Instructor</div>
+          <div class="col-md-2">MTH&nbsp;607</div>
+          <div class="col-md-6"><em>Mathematical Biology</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Spring&nbsp;2016</div>
+          <div class="col-md-2">Discussion Leader</div>
+          <div class="col-md-2">VMB&nbsp;742</div>
+          <div class="col-md-6"><em>Veterinary Integrated Problem Solving</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Winter&nbsp;2016</div>
+          <div class="col-md-2">Co-Instructor</div>
+          <div class="col-md-2">VMB&nbsp;670</div>
+          <div class="col-md-6"><em>Introduction to Systems Biology</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Winter&nbsp;2016</div>
+          <div class="col-md-2">Discussion Leader</div>
+          <div class="col-md-2">VMB&nbsp;741</div>
+          <div class="col-md-6"><em>Veterinary Integrated Problem Solving</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2015</div>
+          <div class="col-md-2"><strong>Instructor</strong></div>
+          <div class="col-md-2"><strong>CS&nbsp;446</strong></div>
+          <div class="col-md-6"><em>Biological Networks</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2015</div>
+          <div class="col-md-2">Gest Lecturer</div>
+          <div class="col-md-2">VMB&nbsp;671/<br />MCB&nbsp;671</div>
+          <div class="col-md-6"><em>Molecular Tools</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2015</div>
+          <div class="col-md-2">Gest Lecturer</div>
+          <div class="col-md-2">BIOE&nbsp;459</div>
+          <div class="col-md-6"><em>Cell Engineering</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Spring&nbsp;2015</div>
+          <div class="col-md-2"><strong>Lead Instructor</strong></div>
+          <div class="col-md-2"><strong>VMB&nbsp;670</strong></div>
+          <div class="col-md-6"><em>Systems Biology
+              and Bioinformatics</em> <br /> (Instructors: Stephen Ramsey, Natalia
+            Shulzhenko, Jan&nbsp;Medlock, and Andrey Morgun)</div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Spring 2015</div>
+          <div class="col-md-2">Discussion Leader</div>
+          <div class="col-md-2">VMB&nbsp;742</div>
+          <div class="col-md-6"><em>Veterinary Integrated Problem Solving</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Winter 2015</div>
+          <div class="col-md-2">Co-Instructor</div>
+          <div class="col-md-2">MCB&nbsp;555</div>
+          <div class="col-md-6"><em>Genome Expression</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Winter 2015</div>
+          <div class="col-md-2">Guest lecturer</div>
+          <div class="col-md-2">BB&nbsp;485/585</div>
+          <div class="col-md-6"><em>Applied Bioinformatics</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2014</div>
+          <div class="col-md-2">Guest Speaker</div>
+          <div class="col-md-2">MCB&nbsp;525</div>
+          <div class="col-md-6"><em>Quantitative biology</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2014</div>
+          <div class="col-md-2"><strong>Instructor</strong></div>
+          <div class="col-md-2"><strong>CS&nbsp;419/519</strong></div>
+          <div class="col-md-6"><em>Selected Topics in
+              Computer Science</em> &ndash; <em>Network Methods in
+              Bioinformatics</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2014</div>
+          <div class="col-md-2">Guest Lecturer</div>
+          <div class="col-md-2">VMB&nbsp;671/<br />MCB&nbsp;671</div>
+          <div class="col-md-6"><em>Molecular Tools</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2014</div>
+          <div class="col-md-2">Seminar Speaker</div>
+          <div class="col-md-2">Z&nbsp;507</div>
+          <div class="col-md-6"><em>What is Systems Biology?</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Fall&nbsp;2014</div>
+          <div class="col-md-2">Guest Speaker</div>
+          <div class="col-md-2">BRR&nbsp;100</div>
+          <div class="col-md-6"><em>Great experiments</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Spring&nbsp;2014</div>
+          <div class="col-md-2">Guest Lecturer</div>
+          <div class="col-md-2">MCB&nbsp;637</div>
+          <div class="col-md-6"><em>Molecular host-microbe interactions</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Winter&nbsp;2014</div>
+          <div class="col-md-2">Guest Instructor</div>
+          <div class="col-md-2">VMB&nbsp;631</div>
+          <div class="col-md-6"><em>Mathematical modeling of biological systems</em></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-2">Winter&nbsp;2014</div>
+          <div class="col-md-2">Guest Lecturer</div>
+          <div class="col-md-2">BB&nbsp;499</div>
+          <div class="col-md-6"><em>Applied Bioinformatics</em></div>
+        </div>
+
+
+
+      </div>
+      
+    </div>
+
+    <div id="Join">
+
+      <div class="container">
+        
+        <div class="divider"></div>
+
+        <h4>Graduate programs that I work with</h4>
+
+        <p>
+          I am able to serve as a thesis advisor for graduate students in any of six
+          graduate programs:
+          <a href="http://eecs.oregonstate.edu/future-students" target="_blank">Computer
+            Science</a>,
+          <a href="http://eecs.oregonstate.edu/future-students" target="_blank">Electrical and Computer Engineering,</a>
+          <a href="http://www.mcb.oregonstate.edu" target="_blank">Molecular and Cellular Biology</a>, 
+          <a href="http://vetmed.oregonstate.edu/graduate-programs"
+             target="_blank">Comparative Health Sciences</a>, 
+          <a href="http://bioengineering.oregonstate.edu/systems-and-computational-biology"
+             target="_blank">Bioengineering</a>, and
+          <a href="http://cgrb.oregonstate.edu/training/blds"
+             target="_blank">Biological Data Sciences</a>.  If you have a PhD
+          project idea in the area of <strong>computational biology</strong>
+          that you wish to discuss, please feel free to contact me (see the
+          "contact" tab above).
+        </p>
+
+        <h4>Diversity</h4>
+        <p>
+          Oregon State University is an Equal Opportunity Employer and the Ramsey Lab
+          group members respect, value, and support diversity in the workplace.
+        </p>
+
+        <h4>Open source policy</h4>
+        <p>
+          We are committeed to open science and to providing to the scientific community the software code that we have
+          developed in our research projects; see our <a href="https://github.com/ramseylab" target="_blank">GitHub page</a>.
+      </div>        
+    </div>
+    
+    <div id="Contact">
+
+      <div class="container">
+        <div class="divider"></div>
+        <h4>Contact</h4>
+        
+        <div class="row">
+          <div class="col-sm">Email address:</div>
+          <div class="col-sm"><a class="incfont" href="&#109;ail&#116;o&#58;stephen&#46;r&#97;%&#54;Dsey&#64;&#37;6&#70;&#37;72&#101;%67onsta%7&#52;&#101;&#46;e&#100;&#117;">stephen&#46;ramsey&#64;or&#101;&#103;ons&#116;&#97;&#116;e&#46;&#101;d&#117;</a></div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-sm">Telephone number:</div>
+          <div class="col-sm"><a href="tel:+1-541-737-5609">541.737.5609</a> &nbsp;<sup>*</sup></div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-sm">Office:</div>
+          <div class="col-sm"><a href="http://maps.google.com/?q=Dryden+Hall+Oregon+State+University" target="_blank">208A Dryden Hall</a></div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-sm">Laboratory:</div>
+          <div class="col-sm"><a href="http://maps.google.com/?q=Dryden+Hall+Oregon+State+University" target="_blank">107 Dryden Hall</a></div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-sm">U.S. Postal address:</div>
+          <div class="col-sm"><p>
+              Stephen Ramsey<br />
+              Oregon State University<br />
+              Department of Biomedical Sciences<br />
+              106 Dryden Hall<br />
+              Corvallis, OR 97331-4801<br />
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">UPS/Fedex address:</div>
+          <div class="col-sm">
+            <p>
+              Stephen Ramsey<br />
+              Oregon State University<br />
+              Department of Biomedical Sciences<br />
+              105 Magruder Hall<br />
+              Corvallis, OR 97331-4801<br />
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">Secure email contact info:</div>
+          <div class="col-sm"><a href="downloads/StephenRamsey_GPGPublicKey.asc" target="_blank">My public encryption key (GPG)</a></div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-sm">GitHub:</div>
+          <div class="col-sm"><a href="https://github.com/saramsey" target="_blank">saramsey</a></div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-sm">Twitter:</div>
+          <div class="col-sm"><a href="https://twitter.com/stephenaramsey" target="_blank">@stephenaramsey</a></div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-sm">Google Hangout:</div>
+          <div class="col-sm">ra&#109;seyst&#64;or&#101;g&#111;&#110;&#115;tat&#101;&#46;edu</div>
+        </div>       
+        <p>
+          &nbsp;
+        </p>
+        <p>
+          * Please send email instead of leaving a voicemail message
+        </p>
+      </div>
+    </div>
+
+    <footer class="footer d-none d-md-flex">
+      <div class="container">
+        <span class="text-muted small">&#169;&nbsp;2013&ndash;2018&nbsp;Stephen&nbsp;Ramsey&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Department of Biomedical Sciences and School of EECS</span>
+      </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"></script>
+    
+  </body>
+</html>
+
