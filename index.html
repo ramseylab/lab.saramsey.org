@@ -62,11 +62,11 @@
       curstate = document.getElementById("alumni_toggle").style.display;
       if (curstate == "none") {
       newstate = "";
-      document.getElementById("alumni_toggle_href").innerHTML = "[hide lab alumni list:]";
+      document.getElementById("alumni_toggle_href").innerHTML = "[hide list:]";
       }
       else {
       newstate = "none";
-      document.getElementById("alumni_toggle_href").innerHTML = "[show lab alumni list ...]";
+      document.getElementById("alumni_toggle_href").innerHTML = "[show list ...]";
       }
       document.getElementById("alumni_toggle").style.display = newstate;
       }
@@ -121,9 +121,9 @@
 
     <link rel="shortcut icon" href="gene_icon.png" type="image/x-icon" /> 
 
-    <meta http-equiv="last-modified" content="Wed, 19 Dec 2018 23:29 GMT" />
+    <meta http-equiv="last-modified" content="Tue, 8 Jan 2019 17:54 GMT" />
 
-    <meta name="keywords" content="systems biology,computational biology,bioinformatics,inflammation,innate immunity,statistics,immunology,macrophages,macrophage,mouse models,systems immunology,atherosclerosis,big data,network,scientific computing,machine learning,Stephen Ramsey,ISB,Seattle BioMed,CIDR,Oregon State University,OSU,gene regulation,gene regulatory network,epigenomics,genomics,Stephen Ramsey Laboratory,GRN,Ramsey Lab,cancer,cistrome,Bayesian,eQTL,GWAS,variome,cancer" />
+    <meta name="keywords" content="systems biology,computational biology,bioinformatics,inflammation,innate immunity,statistics,immunology,macrophages,macrophage,mouse models,systems immunology,atherosclerosis,big data,network,scientific computing,machine learning,Stephen Ramsey,Oregon State University,OSU,gene regulation,gene regulatory network,epigenomics,genomics,Ramsey Laboratory,GRN,Ramsey Lab,cancer,cistrome,Bayesian,eQTL,GWAS,variome" />
 
     <meta name="description" content="Website for Stephen Ramsey, Computational Biology, Oregon State University" />
 
@@ -211,7 +211,7 @@
       <div class="container">
 
         <div class="divider"></div>
-        <h4>Current lab researchers</h4>
+        <h4>Lab members</h4>
         
         <div class="divider"></div>
         <div class="row">
@@ -374,7 +374,7 @@
         <div class="container">
 
           <div class="divider"></div>
-          <h4>Current project collaborators</h4>
+          <h4>Current collaborators</h4>
 
           <div class="divider"></div>
           <div class="row">
@@ -420,13 +420,6 @@
           
           <div class="divider"></div>
           <div class="row">
-            <div class="col-md-3"><a href="http://health.oregonstate.edu/people/bae-harold" target="_blank">Harold Bae</a></div>
-            <div class="col-md-6">OSU School of Biological and Population Health Sciences</div>
-            <div class="col-md-3">genetic epidemiology</div>
-          </div>
-
-          <div class="divider"></div>
-          <div class="row">
             <div class="col-md-3"><a href="http://engr.oregonstate.edu/~fue" target="_blank">Elain Fu</a></div>
             <div class="col-md-6">OSU School of Chemical, Biological, and Environmental Engineering</div>
             <div class="col-md-3">bioengineering for global health applications</div>
@@ -457,11 +450,16 @@
             &nbsp;
           </p>
           
+          <h4>Former lab members</h4>
+          
           <p>
-            <a id="alumni_toggle_href" href="#People" onclick="javascript:toggle_alumni(); return false;">[show lab alumni ...]</a>
+            <a id="alumni_toggle_href" href="#People" onclick="javascript:toggle_alumni(); return false;">[show list...]</a>
           </p>
 
+          
+          
         </div>
+
 
       </div>
 
@@ -470,8 +468,6 @@
         <div class="container">
           
           <div class="divider"></div>
-          
-          <h4>Lab Alumni</h4>
           
           <!--          <div class="row">
                         <div class="col-md-4"><em>Trainee name</em></div>
@@ -536,8 +532,18 @@
         <div class="container">
 
           <div class="divider"></div>
-          <h4>Recent News</h4>
+          <h4>Lab News</h4>
 
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-md-3"><strong>Jan.&nbsp;4,&nbsp;2018</strong></div>
+            <div class="col-md-9">Zheng Liu presents
+              on <a href="https://psb.stanford.edu/psb-online/proceedings/psb19/liu.pdf"
+              target="_blank">Res2s2aM</a>, a deep residual network-based method
+              for identifying functional noncoding SNPs, at the Pacific
+              Symposium on Biocomputing.
+        </div></div>
+        
         <div class="divider"></div>
         <div class="row">
             <div class="col-md-3"><strong>Nov.&nbsp;27,&nbsp;2018</strong></div>
@@ -1106,6 +1112,20 @@
 
           <div class="divider"></div>
           <div class="row">
+            <div class="col-md-3"><span class="journal">Pac Symp Biocomp.</span><br />
+              2018</div>
+            <div class="col-md-5"><em>Res2s2aM: Deep residual network-based model for identifying functional
+noncoding SNPs in trait-associated regions</em></div>
+            <div class="col-md-3">
+              Liu&nbsp;Z, Yao&nbsp;Y, Wei&nbsp;Q, Weeder&nbsp;B, <strong>Ramsey&nbsp;SA</strong>
+            </div>
+            <div class="col-md-1">
+              <a href="https://psb.stanford.edu/psb-online/proceedings/psb19/liu.pdf" target="_blank">[link]</a>
+            </div>
+          </div>
+                    
+          <div class="divider"></div>
+          <div class="row">
             <div class="col-md-3"><span class="journal">Arteriosc&nbsp;Thromb&nbsp;Vasc&nbsp;Biol.</span><br />
               2018</div>
             <div class="col-md-5"><em>Loss of two Akt isoforms in hematopoietic
@@ -1116,7 +1136,7 @@
               Vickers&nbsp;KC, Linton&nbsp;MF
             </div>
             <div class="col-md-1">
-              [in press]
+              <a href="https://doi.org/10.1161/ATVBAHA.118.312206" target="_blank">[link]</a>
             </div>
           </div>
           
