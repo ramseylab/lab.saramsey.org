@@ -18,6 +18,7 @@
       width: 100%;
       height: 100%;}
       .container {max-width: 900px;}
+      div.altshade > div:nth-of-type(even) { background: #e0e0e0; }
       ul.halfskip li.halfskip {vertical-align: top; padding: 5px 0; }
     </style>
 
@@ -29,6 +30,7 @@
       document.getElementById("Publications").style.display = "none";
       document.getElementById("Academics").style.display = "none";
       document.getElementById("Join").style.display = "none";
+      document.getElementById("Outreach").style.display = "none";
       document.getElementById("Contact").style.display = "none";
       toggle_biosketch("ramsey"); 
       toggle_biosketch("dqu");
@@ -122,7 +124,7 @@
 
     <link rel="shortcut icon" href="gene_icon.png" type="image/x-icon" /> 
 
-    <meta http-equiv="last-modified" content="Tue, 5 Feb 2019 13:20 GMT" />
+    <meta http-equiv="last-modified" content="Thu, 7 Feb 2019 18:53 GMT" />
 
     <meta name="keywords" content="systems biology,computational biology,bioinformatics,inflammation,innate immunity,statistics,immunology,macrophages,macrophage,mouse models,systems immunology,atherosclerosis,big data,network,scientific computing,machine learning,Stephen Ramsey,Oregon State University,OSU,gene regulation,gene regulatory network,epigenomics,genomics,Ramsey Laboratory,GRN,Ramsey Lab,cancer,cistrome,Bayesian,eQTL,GWAS,variome" />
 
@@ -159,6 +161,9 @@
           <li class="nav-item">
             <a class="nav-link" id="linkJoin" onclick="javascript:nav('Join'); return false;" href="#Join" data-toggle="collapse" data-target=".navbar-collapse.show">join</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" id="linkOutreach" onclick="javascript:nav('Outreach'); return false;" href="#Outreach" data-toggle="collapse" data-target=".navbar-collapse.show">outreach</a>
+          </li>          
           <li class="nav-item">
             <a class="nav-link" id="linkContact" onclick="javascript:nav('Contact'); return false;" href="#Contact" data-toggle="collapse" data-target=".navbar-collapse.show">contact</a>
           </li>
@@ -611,7 +616,23 @@
             target="_blank">two commentaries and an editorial</a> in
               <em>Clinical and Translational Science</em>.
         </div></div>
-                  
+
+        <div class="divider"></div>
+
+      </div>
+
+      <div class="container">
+        <p>
+          <a id="news_toggle_href"  href="#News" onclick="javascript:toggle_news(); return false;">[show news archive ...]</a>
+        </p>
+      </div>
+
+      <div id="news_toggle">
+
+        <div class="container">
+          
+          <h4>News Archive</h4>
+
         <div class="divider"></div>
         <div class="row">
             <div class="col-md-3"><strong>Oct.&nbsp;23,&nbsp;2018</strong></div>
@@ -675,23 +696,7 @@
             target="_blank">news article</a> on the EECS website.
         </div></div>
 
-
-        <div class="divider"></div>
-
-      </div>
-
-      <div class="container">
-        <p>
-          <a id="news_toggle_href"  href="#News" onclick="javascript:toggle_news(); return false;">[show news archive ...]</a>
-        </p>
-      </div>
-
-      <div id="news_toggle">
-
-        <div class="container">
           
-          <h4>News Archive</h4>
-
         <div class="divider"></div>
         <div class="row">
             <div class="col-md-3"><strong>Jul.&nbsp;6,&nbsp;2018</strong></div>
@@ -2593,6 +2598,79 @@ noncoding SNPs in trait-associated regions</em></div>
           We are committeed to open science and to providing to the scientific community the software code that we have
           developed in our research projects; see our <a href="https://github.com/ramseylab" target="_blank">GitHub page</a>.
       </div>        
+    </div>
+
+    <div id="Outreach">
+      <div class="container">
+        <div class="divider"></div>
+        <h4>Outreach</h4>
+
+        <p>
+In partnership with the Science and Mathematics Investigative Learning
+Experiences (SMILE) organization, we have developed a series of one-hour science
+activities for high school students. The student guides and teacher guides for
+these activities are freely distributed here under the Creative Commons (CC)
+license.
+        </p>
+
+        <div class="container altshade">
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col-md-3">Activity name</div>
+          <div class="col-md-7">Activity description</div>
+          <div class="col-md-2">Link to content</div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-3">PTC Taste Test</div>
+          <div class="col-md-7">See if you can taste PTC or not. It's all in your genes!</div>
+          <div class="col-md-2"><a href="PTC-taste-test">content</a></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">Paper Karyotypes</div>
+          <div class="col-md-7">Learn about chromosomes by reconstructing a karyotype.</div>
+          <div class="col-md-2"><a href="paper-karyotypes">content</a></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">Genetic4</div>
+          <div class="col-md-7">Learn about genetic conditions by playing Genetic4.</div>
+          <div class="col-md-2"><a href="Genetic4">content</a></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">Dinosaur Mass Spec!</div>
+          <div class="col-md-7">Sequence proteins in fossils using Mass Spectrometry!</div>
+          <div class="col-md-2"><a href="mass-spectrometry">content</a></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">BLAST</div>
+          <div class="col-md-7">What types of protein are in this dinosaur fossil?</div>
+          <div class="col-md-2"><a href="BLAST">content</a></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">Phylogenetic Trees</div>
+          <div class="col-md-7">Compare dinosaur proteins to modern organisms'</div>
+          <div class="col-md-2"><a href="phylogenetic-trees">content</a></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">Ethics of De-Extinction</div>
+          <div class="col-md-7">Should we bring back extinct species? An ethics activity.</div>
+          <div class="col-md-2"><a href="ethics-deextinction">content</a></div>
+        </div>
+        </div>
+
+        <div class="divider"></div>
+        
+      <p>
+        Credits: Jay Well, Morgan McCarthy, Demi Butler, Emma Cushing, Lexi Wilson, Dane Besser, Baylee Goodwin, and Stephen Ramsey.
+      </p>
+      </div>
+
     </div>
     
     <div id="Contact">
