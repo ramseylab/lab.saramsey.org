@@ -26,25 +26,39 @@
     <script type="text/javascript">
 
       function init() {
-      document.getElementById("People").style.display = "none";
-      document.getElementById("News").style.display = "none";
-      document.getElementById("Publications").style.display = "none";
-      document.getElementById("Academics").style.display = "none";
-      document.getElementById("Join").style.display = "none";
-      document.getElementById("Outreach").style.display = "none";
-      document.getElementById("Contact").style.display = "none";
-      toggle_biosketch("ramsey"); 
-      toggle_biosketch("dqu");
-      toggle_biosketch("fwomack");
-      toggle_biosketch("msinha"); 
-      toggle_biosketch("qwei"); 
-      toggle_biosketch("scarrell");
-      toggle_biosketch("yyao"); 
-      toggle_biosketch("zliu"); 
-      toggle_news();
-      toggle_oldpubs();
-      toggle_alumni(); 
-      window.oldDiv = "Overview";
+          document.getElementById("People").style.display = "none";
+          document.getElementById("News").style.display = "none";
+          document.getElementById("Publications").style.display = "none";
+          document.getElementById("Academics").style.display = "none";
+          document.getElementById("Join").style.display = "none";
+          document.getElementById("Contact").style.display = "none";
+          document.getElementById("Outreach").style.display = "none";
+          document.getElementById("Overview").style.display = "none";
+          var testEnd = /#(.*)/;
+          var matchEnd = window.location.href.match(testEnd);
+          if (matchEnd === null) {
+              document.getElementById("Overview").style.display = "initial";
+              window.oldDiv = "Overview";
+          } else {
+              var section = matchEnd[1];
+              if (section != "Overview") {
+                  document.getElementById(section).style.display = "initial";
+              } else {
+                  document.getElementById("Overview").style.display = "initial";
+              }
+              window.oldDiv = section;
+          }
+          toggle_biosketch("ramsey"); 
+          toggle_biosketch("dqu");
+          toggle_biosketch("fwomack");
+          toggle_biosketch("msinha"); 
+          toggle_biosketch("qwei"); 
+          toggle_biosketch("scarrell");
+          toggle_biosketch("yyao"); 
+          toggle_biosketch("zliu"); 
+          toggle_news();
+          toggle_oldpubs();
+          toggle_alumni(); 
       }
 
       function toggle_biosketch(name) {
