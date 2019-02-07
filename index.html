@@ -41,11 +41,7 @@
               window.oldDiv = "Overview";
           } else {
               var section = matchEnd[1];
-              if (section != "Overview") {
-                  document.getElementById(section).style.display = "initial";
-              } else {
-                  document.getElementById("Overview").style.display = "initial";
-              }
+              document.getElementById(section).style.display = "initial";
               window.oldDiv = section;
           }
           toggle_biosketch("ramsey"); 
