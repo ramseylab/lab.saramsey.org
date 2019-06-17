@@ -59,7 +59,7 @@ server {
 		 add_header Cache-Control "public, no-transform";
 	}
 
-	location ~ /high-school-activities/[^/]+/ {
+	location ~ /outreach-activities/[^/]+/ {
 		 autoindex on;
 	}
 	
