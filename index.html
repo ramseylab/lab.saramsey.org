@@ -51,7 +51,8 @@
           toggle_biosketch("cpeene"); 
           toggle_news();
           toggle_oldpubs();
-          toggle_alumni(); 
+          toggle_alumni();
+          toggle_teaching();
       }
 
       function toggle_biosketch(name) {
@@ -82,6 +83,19 @@
           document.getElementById("alumni_toggle").style.display = newstate;
       }
 
+      function toggle_teaching() {
+          curstate = document.getElementById("teaching_toggle").style.display;
+          if (curstate == "none") {
+              newstate = "";
+              document.getElementById("teaching_toggle_href").innerHTML = "[&#x25bc;]";
+          }
+          else {
+              newstate = "none";
+              document.getElementById("teaching_toggle_href").innerHTML = "[&#x25b6;]";
+          }
+          document.getElementById("teaching_toggle").style.display = newstate;
+      }
+      
       function toggle_news() {
           curstate = document.getElementById("news_toggle").style.display;
           if (curstate == "none") {
@@ -354,22 +368,6 @@ NSF, PhRMA, ACF, Amazon, MRFO, and NCATS.
           U.&nbsp;Arizona, and 
           UAB.
         </p>
-
-        <div class="divider"></div>
-        <h4>Graduate programs that I work with</h4>
-
-          <ul>
-          <li><a href="http://vetmed.oregonstate.edu/graduate-programs"
-             target="_blank" rel="noopener">Comparative Health Sciences</a></li>
-          <li><a href="http://eecs.oregonstate.edu/academics/graduate/cs" target="_blank" rel="noopener">Computer
-            Science</a></li>
-          <li><a href="http://eecs.oregonstate.edu/academics/graduate/ece" target="_blank" rel="noopener">Electrical &amp; Computer Engineering</a></li>
-          <li><a href="http://eecs.oregonstate.edu/ai-degree-program" target="_blank" rel="noopener">Artificial Intelligence</a></li>
-          <li><a href="http://cgrb.oregonstate.edu/training/blds"
-             target="_blank" rel="noopener">Biological Data Sciences</a></li>
-          <li><a href="http://bioengineering.oregonstate.edu/systems-and-computational-biology"
-                 target="_blank" rel="noopener">Bioengineering</a></li>
-          </ul>
 
         <div class="divider"></div>
         <h4>Former lab members</h4>
@@ -2767,8 +2765,11 @@ NSF, PhRMA, ACF, Amazon, MRFO, and NCATS.
     
     <h4>Past teaching</h4>
 
+    <p>
+      <a id="teaching_toggle_href" href="#Academics" onclick="javascript:toggle_teaching(); return false;">[&#x25b6;]</a>
+    </p>
     
-    <div class="container altshade">
+    <div class="container altshade" id="teaching_toggle">
 
       <div class="row mb-2">
         <div class="col-md-2">Fall&nbsp;2020</div>
@@ -3042,8 +3043,26 @@ NSF, PhRMA, ACF, Amazon, MRFO, and NCATS.
 
     </div>
 
+            <div class="divider"></div>
+        <h4>Graduate programs that I work with</h4>
+
+          <ul>
+          <li><a href="http://vetmed.oregonstate.edu/graduate-programs"
+             target="_blank" rel="noopener">Comparative Health Sciences</a></li>
+          <li><a href="http://eecs.oregonstate.edu/academics/graduate/cs" target="_blank" rel="noopener">Computer
+            Science</a></li>
+          <li><a href="http://eecs.oregonstate.edu/academics/graduate/ece" target="_blank" rel="noopener">Electrical &amp; Computer Engineering</a></li>
+          <li><a href="http://eecs.oregonstate.edu/ai-degree-program" target="_blank" rel="noopener">Artificial Intelligence</a></li>
+          <li><a href="http://cgrb.oregonstate.edu/training/blds"
+             target="_blank" rel="noopener">Biological Data Sciences</a></li>
+          <li><a href="http://bioengineering.oregonstate.edu/systems-and-computational-biology"
+                 target="_blank" rel="noopener">Bioengineering</a></li>
+          </ul>
   </div>
 
+
+
+  
   <p>&nbsp;</p>
   
 </div>
