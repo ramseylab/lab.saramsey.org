@@ -17,6 +17,8 @@ server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
 	server_name lab.saramsey.org;
+        charset utf-8;
+        source_charset utf-8;	
 	return 301 https://$server_name$request_uri;
 	}
 
@@ -42,6 +44,9 @@ server {
 
 	root /home/ubuntu/lab.saramsey.org;
 
+        charset utf-8;
+        source_charset utf-8;
+	
 	# Add index.php to the list if you are using PHP
 	index index.html index.htm index.nginx-debian.html;
 
