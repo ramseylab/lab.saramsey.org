@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /private
+Disallow: /.git
+Disallow: /.gitignore
+Disallow: /scripts
+Disallow: /config
+
