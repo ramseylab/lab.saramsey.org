@@ -6,3 +6,5 @@ Disallow: /scripts/*
 Disallow: /config/*
 Disallow: /cs446/*
 Disallow: /outreach-activities/*
+Disallow: /webfonts/*
+Disallow: /svgs/*
