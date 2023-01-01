@@ -4,4 +4,6 @@ Disallow: /.git
 Disallow: /.gitignore
 Disallow: /scripts
 Disallow: /config
+Disallow: /cs446
+Disallow: /outreach-activities
 
