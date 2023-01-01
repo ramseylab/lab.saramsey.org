@@ -9,3 +9,4 @@ Disallow: /outreach-activities/*
 Disallow: /webfonts/*
 Disallow: /svgs/*
 Disallow: /cerenkov/*
+Disallow: /releases/*
