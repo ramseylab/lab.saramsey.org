@@ -6,7 +6,6 @@ Disallow: /scripts/*
 Disallow: /config/*
 Disallow: /cs446/
 Disallow: /cs446/*
-Disallow: /outreach-activities/*
 Disallow: /cerenkov/*
 Disallow: /releases/*
 Disallow: /corrigenda/*
