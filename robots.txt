@@ -7,8 +7,6 @@ Disallow: /config/*
 Disallow: /cs446/
 Disallow: /cs446/*
 Disallow: /outreach-activities/*
-Disallow: /webfonts/*
-Disallow: /svgs/*
 Disallow: /cerenkov/*
 Disallow: /releases/*
 Disallow: /corrigenda/*
