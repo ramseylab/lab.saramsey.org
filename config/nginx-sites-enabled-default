@@ -52,7 +52,7 @@ server {
 		try_files $uri $uri/ =404;
 	}
 
-	location /outreach-activities/* {
+	location ~ /outreach-activities/*/ {
 		add_header X-Robots-Tag "noindex, follow" always;
 	}
 
