@@ -14,10 +14,17 @@
 # Default server configuration
 #
 server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	server_name lab.saramsey.org;
+        charset utf-8;
+        source_charset utf-8;	
+	return 301 https://$server_name$request_uri;
+	}
+
+server {
 	# SSL configuration
 	#
-	listen 80;
-	listen [::]:80;
 	listen 443 ssl default_server;
 	listen [::]:443 ssl default_server;
 
@@ -52,10 +59,6 @@ server {
 		try_files $uri $uri/ =404;
 	}
 
-	location ~ /outreach-activities/*/ {
-		add_header X-Robots-Tag "noindex, follow" always;
-	}
-
 	location ~*(.js|css|png|jpg|jpeg|gif|ico|html)$ {
 		 expires 7d;
 		 add_header Cache-Control "public, no-transform";
@@ -63,6 +66,7 @@ server {
 
 	location ~ /outreach-activities/[^/]+/ {
 		 autoindex on;
+		 add_header X-Robots-Tag "noindex, follow" always;   
 	}
 	
 	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
