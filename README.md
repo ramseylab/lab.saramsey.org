@@ -6,7 +6,7 @@ Oregon State University Web Services.
 
 
 ## Setup
-See `private/config.md`
+See `docs/setup.md`
 
 
 
