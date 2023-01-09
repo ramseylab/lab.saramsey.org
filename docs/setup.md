@@ -13,5 +13,9 @@ instance
 - `cd /home/ubuntu && git clone https://github.com/ramseylab/lab.saramsey.org.git`
 - `sudo apt-get install -y certbot python-certbot-nginx`
 - `sudo certbot --nginx -d lab.saramsey.org` (choose option 2, redirect)
+- `sudo rm /etc/nginx/sites-enabled/default`
+- `sudo cp /home/ubuntu/lab.saramsey.org/config/lab.saramsey.org-nginx.conf /etc/nginx/sites-available`
+- `sudo ln -s /etc/nginx/sites-available/lab.saramsey.org-nginx.conf /etc/nginx/sites-enabled`
+- `sudo service nginx restart`
 - `sudo chmod 755 /home/ubuntu`
 - `cp /home/ubuntu/lab.saramsey.org/scripts/update-website.sh ~`
