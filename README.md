@@ -6,11 +6,7 @@ Oregon State University Web Services.
 
 
 ## Setup
+See `private/config.md`
 
-```
-sudo apt-get update
-sudo apt-get install -y nginx
-sudo apt-get install -y certbot python3-certbot-nginx
-```
 
 
