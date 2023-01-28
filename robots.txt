@@ -11,5 +11,4 @@ Disallow: /releases/*
 Disallow: /corrigenda/*
 Disallow: /svgs/*
 Disallow: /webfonts/*
-Disallow: /releases/*
 Disallow: /downloads/*
