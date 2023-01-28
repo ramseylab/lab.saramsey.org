@@ -9,3 +9,6 @@ Disallow: /cs446/*
 Disallow: /cerenkov/*
 Disallow: /releases/*
 Disallow: /corrigenda/*
+Disallow: /svgs/*
+Disallow: /webfonts/*
+Disallow: /releases/*
