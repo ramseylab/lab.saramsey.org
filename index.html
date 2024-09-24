@@ -23,6 +23,16 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
     <link rel="alternate" href="https://lab.saramsey.org">
     <link rel="shortcut icon" href="gene_icon.png" type="image/x-icon"> 
     <link rel="apple-touch-icon" href="apple-touch-icon.png" type="image/x-icon">
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll('a[href^="http"]');
+    links.forEach(function (link) {
+      link.setAttribute("rel", "noopener");
+      link.setAttribute("target", "_blank");
+    });
+  });
+</script>
     
     <style>
       .journal {background-color: #385c86; color: white; border-radius: 4px; padding: 1px 5px 1px 5px;}
@@ -164,8 +174,6 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
 
     </script>
 
-
-
     <title>Ramsey Laboratory | Computational Systems Biology | OSU</title>    
   </head>
   
@@ -201,7 +209,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             <a class="nav-link" id="linkContact" onclick="javascript:nav('Contact'); return false;" href="#Contact" data-toggle="collapse" data-target=".navbar-collapse.show">contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="linkCode" href="https://github.com/ramseylab" target="_blank" rel="noopener">code</a>
+            <a class="nav-link" id="linkCode" href="https://github.com/ramseylab">code</a>
           </li>
         </ul>
       </div>
@@ -258,7 +266,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
           <div class="row" id="biosketch_ramsey">
             <div class="col-md-2">&nbsp;<br><img src="sramsey.png" title="illustration by gudkraf at Fiverr" alt="portrait"><br>
               &nbsp;<br>
-              <a class="decfont" href="sramsey_studio.jpg" target="_blank" rel="noopener">[studio photo]</a>
+              <a class="decfont" href="sramsey_studio.jpg">[studio photo]</a>
             </div>
             <div class="col-md-10">
               &nbsp;<br> Stephen originally studied physics and mathematics,
@@ -646,14 +654,14 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
               Angel at OHSU and with Christiane L&ouml;hr at OSU) has been
               accepted for publication in <em>Veterinary and Comparative
               Oncology</em> and is now available on
-              <a href="https://doi.org/10.1101/2024.08.18.608482" target="_blank" rel="noopener">bioRxiv</a>.</div>
+              <a href="https://doi.org/10.1101/2024.08.18.608482">bioRxiv</a>.</div>
           </div>
           
           <div class="row mb-2">
             <div class="col-md-3"><strong>June&nbsp;21,&nbsp;2024</strong></div>
             <div class="col-md-9">Students Frankie Hodges, Sundar Pullela,
               Akshay Mulgund, and Derrick Higgins demonstrated their AI chat
-              agent for rare disease, <a href="https://radiant.rarepath.ai" target="_blank" rel="noopener">Radiant</a>, at the <a href="https://hackdisease.org/" target="_blank" rel="noopener">2024 Rare Disease AI
+              agent for rare disease, <a href="https://radiant.rarepath.ai">Radiant</a>, at the <a href="https://hackdisease.org/">2024 Rare Disease AI
               Hackathon</a> at GitHub headquarters in San Francisco, CA!</div>
           </div>
           
@@ -715,17 +723,17 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
          
          <div class="row mb-2">
             <div class="col-md-3"><strong>Sep.&nbsp;9,&nbsp;2023</strong></div>
-            <div class="col-md-9">Steve, Will Byrd, and Matt Might organized a one day workshop <em>Declarative Programming in Biology and Medicine</em> (<a href="https://icfp23.sigplan.org/home/declmed-2023" target="_blank" rel="noopener">DeclMed</a>) at the International Conference on Functional Programming in Seattle.</div>
+            <div class="col-md-9">Steve, Will Byrd, and Matt Might organized a one day workshop <em>Declarative Programming in Biology and Medicine</em> (<a href="https://icfp23.sigplan.org/home/declmed-2023">DeclMed</a>) at the International Conference on Functional Programming in Seattle.</div>
          </div>
          
          <div class="row mb-2">
             <div class="col-md-3"><strong>July&nbsp;24,&nbsp;2023</strong></div>
-            <div class="col-md-9"><em>Bonjour, Lyon!</em> Steve presents on ARAX and RTX-KG2 in the <a href="https://www.iscb.org/ismbeccb2023-programme/tracks/transmed" target="_blank" rel="noopener">TransMed COSI track</a> at the ISMB conference in Lyon, France.</div>
+            <div class="col-md-9"><em>Bonjour, Lyon!</em> Steve presents on ARAX and RTX-KG2 in the <a href="https://www.iscb.org/ismbeccb2023-programme/tracks/transmed">TransMed COSI track</a> at the ISMB conference in Lyon, France.</div>
          </div>
 
          <div class="row mb-2">
             <div class="col-md-3"><strong>July&nbsp;17,&nbsp;2023</strong></div>
-            <div class="col-md-9">Steve, David Koslicki, and Chris Plaisier give a <a href="https://www.iscb.org/ismbeccb2023-programme/tutorials#vt5" target="_blank" rel="noopener">tutorial on Neo4j</a> at the ISMB conference.</div>
+            <div class="col-md-9">Steve, David Koslicki, and Chris Plaisier give a <a href="https://www.iscb.org/ismbeccb2023-programme/tutorials#vt5">tutorial on Neo4j</a> at the ISMB conference.</div>
          </div>
           
          <div class="row mb-2">
@@ -753,7 +761,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
         
         <div class="divider"></div>
         <p>
-          <i>Bibliometric data and pre-2004 publications (in physics) are available on <a target="_blank" rel="noopener" href="http://scholar.google.com/citations?user=286qVQYAAAAJ">Google Scholar</a>.</i>
+          <i>Bibliometric data and pre-2004 publications (in physics) are available on <a href="http://scholar.google.com/citations?user=286qVQYAAAAJ">Google Scholar</a>.</i>
         </p>
 
         <!--         <div class="row">
@@ -778,7 +786,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Thomas&nbsp;G
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1101/2024.08.18.608482" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>             
+            <a href="https://doi.org/10.1101/2024.08.18.608482"><i class="fas fa-external-link-alt">&nbsp;</i></a>             
           </div>
         </div>
 
@@ -794,7 +802,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Fu&nbsp;E
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1007/s10800-024-02153-5" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>             
+            <a href="https://doi.org/10.1007/s10800-024-02153-5"><i class="fas fa-external-link-alt">&nbsp;</i></a>             
           </div>
         </div>
         
@@ -809,7 +817,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.3390/computation12030042" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>         
+            <a href="https://doi.org/10.3390/computation12030042"><i class="fas fa-external-link-alt">&nbsp;</i></a>         
           </div>
         </div>
         
@@ -827,7 +835,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Wentland&nbsp;L
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.3390/chemosensors11080467" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>         
+            <a href="https://doi.org/10.3390/chemosensors11080467"><i class="fas fa-external-link-alt">&nbsp;</i></a>         
           </div>
         </div>
                 
@@ -852,7 +860,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Xu&nbsp;C
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1017/cts.2023.619" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>            
+            <a href="https://doi.org/10.1017/cts.2023.619"><i class="fas fa-external-link-alt">&nbsp;</i></a>            
           </div>
         </div>
         
@@ -881,7 +889,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Koslicki&nbsp;D<sup>*</sup>
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1093/bioinformatics/btad082" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1093/bioinformatics/btad082"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -899,7 +907,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Fu&nbsp;E
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1007/s10800-022-01785-9" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1007/s10800-022-01785-9"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -919,7 +927,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Rockey&nbsp;DD
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1128/iai.00265-22" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1128/iai.00265-22"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -961,7 +969,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Whitlock&nbsp;JH
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.3389/frai.2022.910216" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.3389/frai.2022.910216"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -997,7 +1005,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Mungall&nbsp;C
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1111/cts.13302" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a> 
+            <a href="https://doi.org/10.1111/cts.13302"><i class="fas fa-external-link-alt">&nbsp;</i></a> 
           </div>
         </div>
         
@@ -1026,7 +1034,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1186/s12859-022-04932-3" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1186/s12859-022-04932-3"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1047,7 +1055,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Xu&nbsp;H
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1016/j.imu.2021.100733" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1016/j.imu.2021.100733"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1062,7 +1070,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1186/s12859-021-04339-6" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1186/s12859-021-04339-6"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1084,7 +1092,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Bracha&nbsp;S
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1186/s12935-021-01943-7" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1186/s12935-021-01943-7"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
        
@@ -1101,7 +1109,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Traber&nbsp;MG
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.3390/nu13020468" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.3390/nu13020468"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1119,7 +1127,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Liu&nbsp;Z
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1145/3448016.3457316" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1145/3448016.3457316"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1134,7 +1142,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://proceedings.aaai-make.info/AAAI-MAKE-PROCEEDINGS-2021/paper31.pdf" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://proceedings.aaai-make.info/AAAI-MAKE-PROCEEDINGS-2021/paper31.pdf"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1168,7 +1176,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Fisher&nbsp;EA              
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.7554/eLife.67932" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.7554/eLife.67932"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1186,7 +1194,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1371/journal.pone.0245776" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1371/journal.pone.0245776"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1205,7 +1213,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Curran&nbsp;KL
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1111/jvim.15898" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1111/jvim.15898"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1235,7 +1243,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1186/s12864-019-6432-4" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1186/s12864-019-6432-4"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1248,7 +1256,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Yao&nbsp;Y, Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1142/9789811215636_0047" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1142/9789811215636_0047"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1261,7 +1269,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA, Liu&nbsp;Z, Yao&nbsp;Y, Weeder&nbsp;B
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1007/978-1-0716-0026-9_6" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1007/978-1-0716-0026-9_6"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1276,7 +1284,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Bermudez&nbsp;L
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1016/j.cimid.2019.101332" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1016/j.cimid.2019.101332"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1293,7 +1301,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             S&eacute;guin&nbsp;B, Keller&nbsp;C, L&ouml;hr&nbsp;CV
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1186/s12885-019-5501-z" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1186/s12885-019-5501-z"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1306,7 +1314,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Sinha&nbsp;M, Tadepalli&nbsp;P, Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://why19.causalai.net/papers/siha-why19.pdf" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://why19.causalai.net/papers/siha-why19.pdf"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1323,7 +1331,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA, Fisher&nbsp;EA, Loke&nbsp;P
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1172/jci.insight.124574" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1172/jci.insight.124574"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1337,7 +1345,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Yao&nbsp;Y, Liu&nbsp;Z, Wei&nbsp;Q, Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1186/s12859-019-2637-4" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1186/s12859-019-2637-4"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1351,7 +1359,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Liu&nbsp;Z, Yao&nbsp;Y, Wei&nbsp;Q, Weeder&nbsp;B, Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1142/9789813279827_0008" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1142/9789813279827_0008"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1367,7 +1375,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Vickers&nbsp;KC, Linton&nbsp;MF
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1161/ATVBAHA.118.312206" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1161/ATVBAHA.118.312206"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1380,7 +1388,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             The Biomedical Data Translator Consortium
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1111/cts.12591" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1111/cts.12591"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1393,7 +1401,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             The Biomedical Data Translator Consortium              
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1111/cts.12592" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1111/cts.12592"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1409,7 +1417,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Brady&nbsp;JV, Troyer&nbsp;RM, Ramsey&nbsp;SA, Leeper&nbsp;H, Yang&nbsp;L, Maier&nbsp;CS, Goodall&nbsp;CP, Ruby&nbsp;CE, Albarqi&nbsp;HA, Taratula&nbsp;O, Bracha&nbsp;S
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1016/j.tranon.2018.07.004" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1016/j.tranon.2018.07.004"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1427,7 +1435,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Kioussi&nbsp;C.
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1038/s41598-018-25998-1" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1038/s41598-018-25998-1"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1440,7 +1448,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Singh&nbsp;AJ, Ramsey&nbsp;SA, Filtz&nbsp;TM, Kioussi&nbsp;C.
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1007/s00018-017-2679-6" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1007/s00018-017-2679-6"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1451,7 +1459,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             the book <em>Systems Biology</em> (Mariano Bizzarri (ed.)</div>
           <div class="col-md-3">
             Ramsey&nbsp;SA</div>
-          <div class="col-md-1"><a href="https://doi.org/10.1007/978-1-4939-7456-6_14" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a href="https://doi.org/10.1007/978-1-4939-7456-6_14"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
         
         <div class="divider"></div>
@@ -1463,7 +1471,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Askovich&nbsp;P, Ramsey&nbsp;SA, Diercks&nbsp;AH, Kennedy&nbsp;KA, Knijnenburg&nbsp;T, Aderem&nbsp;A
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1371/journal.pone.0184850" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1371/journal.pone.0184850"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1476,7 +1484,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Yao&nbsp;Y<sup>*</sup>, Liu&nbsp;Z<sup>*</sup>, Singh&nbsp;S, Wei&nbsp;Q, Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1145/3107411.3107414" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1145/3107411.3107414"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1490,7 +1498,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Gusarova&nbsp;V, Gromada&nbsp;J, Weinstock&nbsp;A, Moore&nbsp;KJ, Loke&nbsp;P, Fisher&nbsp;EA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1172/JCI75005" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1172/JCI75005"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1502,7 +1510,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
           <div class="col-md-3">
             Ramsey&nbsp;SA, Xu&nbsp;T, Goodall&nbsp;C, Rhodes&nbsp;AC, Kashyap&nbsp;A, He&nbsp;J, Bracha&nbsp;S</div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1002/gcc.22441" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1002/gcc.22441"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1515,7 +1523,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Choudhury&nbsp;M, Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.4137/GRSB.S40768" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.4137/GRSB.S40768"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1528,7 +1536,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Yu&nbsp;AZ, Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1007/s12539-016-0194-3" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1007/s12539-016-0194-3"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1541,7 +1549,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.4137/BBI.S29330" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.4137/BBI.S29330"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1554,7 +1562,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Xu&nbsp;T, Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1145/2975167.2985684" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1145/2975167.2985684"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
         
@@ -1568,7 +1576,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Fu&nbsp;E
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1021/acs.analchem.5b04222" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1021/acs.analchem.5b04222"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1582,7 +1590,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.1093/bioinformatics/btv391" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.1093/bioinformatics/btv391"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1600,7 +1608,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Morgun&nbsp;A
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.4137/BBI.S12467" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.4137/BBI.S12467"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1618,7 +1626,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ranish&nbsp;J
           </div>
           <div class="col-md-1">
-            <a href="https://doi.org/10.15252/embj.201489819" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a href="https://doi.org/10.15252/embj.201489819"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1641,7 +1649,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Fisher&nbsp;EA
           </div>
           <div class="col-md-1">
-            <a  href="https://doi.org/10.1161/ATVBAHA.114.304029" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a  href="https://doi.org/10.1161/ATVBAHA.114.304029"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1663,7 +1671,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Gold&nbsp;ES
           </div>
           <div class="col-md-1">
-            <a  href="https://doi.org/10.1371/journal.pgen.1004828" target="_blank" rel="noopener"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a  href="https://doi.org/10.1371/journal.pgen.1004828"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1684,7 +1692,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Shmulevich&nbsp;I
           </div>
           <div class="col-md-1">
-            <a  target="_blank" rel="noopener" href="https://doi.org/10.1038/nmeth.2924"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a  href="https://doi.org/10.1038/nmeth.2924"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1705,7 +1713,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Stempien-Otero&nbsp;A
           </div>
           <div class="col-md-1">
-            <a  target="_blank" rel="noopener" href="https://doi.org/10.1371/journal.pone.0057837"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a  href="https://doi.org/10.1371/journal.pone.0057837"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1723,7 +1731,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Rodriguez&nbsp;DJ,
             Moritz&nbsp;RL,
             Aderem&nbsp;A</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1084/jem.20111202"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1084/jem.20111202"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1738,7 +1746,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA,
             Aitchison&nbsp;JD
           </div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1038/msb.2012.10"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1038/msb.2012.10"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1758,7 +1766,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Gold&nbsp;E,
             Ramsey&nbsp;SA,
             Dichek&nbsp;DA</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1074/jbc.M110.202135"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1074/jbc.M110.202135"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1770,7 +1778,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ratushny&nbsp;AV,
             Ramsey&nbsp;SA,
             Aitchison&nbsp;JD</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1007/978-1-61779-276-2_21"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1007/978-1-61779-276-2_21"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1783,7 +1791,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Kauffman&nbsp;P,
             Lutz&nbsp;B,
             Yager&nbsp;P</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1007/s10404-010-0643-y" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1007/s10404-010-0643-y" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1801,7 +1809,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Yager&nbsp;P
           </div>
           <div class="col-md-1">
-            <a  target="_blank" rel="noopener" href="https://doi.org/10.1021/ac201950g"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+            <a  href="https://doi.org/10.1021/ac201950g"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1817,7 +1825,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA,
             Aderem&nbsp;A,
             Hai&nbsp;T</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1242/jcs.064915" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1242/jcs.064915" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1840,7 +1848,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Stolyar&nbsp;T,
             Aderem&nbsp;A,
             Shmulevich&nbsp;I</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1093/bioinformatics/btq405" ><i class="fas fa-external-link-alt">&nbsp;</i></a>
+          <div class="col-md-1"><a  href="https://doi.org/10.1093/bioinformatics/btq405" ><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1862,7 +1870,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Bressler&nbsp;R,
             Shmulevich&nbsp;I,
             Boyle&nbsp;J</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1186/1471-2105-11-377" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1186/1471-2105-11-377" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1874,7 +1882,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA,
             Gold&nbsp;ES,
             Aderem&nbsp;A</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1002/emmm.201000063" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1002/emmm.201000063" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1889,7 +1897,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Foley&nbsp;JO,
             Helton&nbsp;K,
             Yager&nbsp;P</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1021/ac802672v" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1021/ac802672v" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1907,7 +1915,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Nykter&nbsp;M,
             Shmulevich&nbsp;I,
             Aderem&nbsp;A</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1038/ni.1721" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1038/ni.1721" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1924,7 +1932,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Shmulevich&nbsp;I,
             Galitski&nbsp;T,
             Hansen&nbsp;CL</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1073/pnas.0813416106" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1073/pnas.0813416106" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1938,7 +1946,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Wan&nbsp;Y,
             Smith&nbsp;JJ,
             Aitchison&nbsp;JD</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1529/biophysj.108.134064" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1529/biophysj.108.134064" ><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1963,7 +1971,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Yudkovsky&nbsp;N,
             Aderem&nbsp;A,
             Shmulevich&nbsp;I</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1371/journal.pcbi.1000021" ><i class="fas fa-external-link-alt">&nbsp;</i></a>
+          <div class="col-md-1"><a  href="https://doi.org/10.1371/journal.pcbi.1000021" ><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -1980,7 +1988,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Hood&nbsp;L,
             Yli-Harja&nbsp;O,
             Shmulevich&nbsp;I</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1073/pnas.0711525105"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1073/pnas.0711525105"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -1992,7 +2000,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
           <div class="col-md-3">Fu&nbsp;ES,
             Ramsey&nbsp;SA,
             Yager&nbsp;P</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1016/j.aca.2007.07.056"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1016/j.aca.2007.07.056"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -2008,7 +2016,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Saleem&nbsp;RA,
             Rachubinski&nbsp;RA,
             Aitchison&nbsp;JD</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1038/msb4100157"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1038/msb4100157"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -2022,7 +2030,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA,
             Taylor&nbsp;RJ,
             Galitski&nbsp;T</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1371/journal.pone.0000249"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1371/journal.pone.0000249"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -2038,7 +2046,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Wiley&nbsp;B,
             Xia&nbsp;Y,
             Yager&nbsp;P</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1016/j.snb.2006.09.059"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1016/j.snb.2006.09.059"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -2051,7 +2059,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Ramsey&nbsp;SA,
             Thariani&nbsp;R,
             Yager&nbsp;P</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1063/1.2227646"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1063/1.2227646"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -2068,9 +2076,9 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             de&nbsp;Atauri&nbsp;P,
             Bolouri&nbsp;H,
             Aitchison&nbsp;JD</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1038/ng1869"><i class="fas fa-external-link-alt">&nbsp;</i></a><br>
-            <a href="downloads/GalNoiseModel.zip" target="_blank" rel="noopener">[model]</a><br>
-            [Corrected <a  target="_blank" rel="noopener" href="corrigenda/GalNoiseSuppNote.pdf">suppl. note</a>]
+          <div class="col-md-1"><a  href="https://doi.org/10.1038/ng1869"><i class="fas fa-external-link-alt">&nbsp;</i></a><br>
+            <a href="downloads/GalNoiseModel.zip">[model]</a><br>
+            [Corrected <a  href="corrigenda/GalNoiseSuppNote.pdf">suppl. note</a>]
           </div>
         </div>
 
@@ -2090,7 +2098,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Aitchison&nbsp;JD,
             Bolouri&nbsp;H</div>
           <div class="col-md-1">
-            <a  target="_blank" rel="noopener" href="https://doi.org/10.1016/j.physd.2006.03.010"><i class="fas fa-external-link-alt">&nbsp;</i></a>
+            <a  href="https://doi.org/10.1016/j.physd.2006.03.010"><i class="fas fa-external-link-alt">&nbsp;</i></a>
           </div>
         </div>
 
@@ -2110,7 +2118,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Orrell&nbsp;D,
             Bolouri&nbsp;H</div>
           <div class="col-md-1">
-            <a  target="_blank" rel="noopener" href="https://doi.org/10.1098/rstb.2005.1808"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+            <a  href="https://doi.org/10.1098/rstb.2005.1808"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -2130,7 +2138,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Hood&nbsp;L,
             Siegel&nbsp;AF,
             Bolouri&nbsp;H</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1073/pnas.0508647102"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1073/pnas.0508647102"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -2151,7 +2159,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
             Aitchison&nbsp;JD,
             Hood&nbsp;L
           </div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1073/pnas.0508649102"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1073/pnas.0508649102"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -2162,8 +2170,8 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
               networks</em></div>
           <div class="col-md-3">Ramsey&nbsp;S, Orrell&nbsp;D, Bolouri&nbsp;H</div>
           <div class="col-md-1">
-            <a  target="_blank" rel="noopener" href="https://doi.org/10.1142/S0219720005001132"><i class="fas fa-external-link-alt">&nbsp;</i></a><br>
-            <a  target="_blank" rel="noopener" href="https://doi.org/10.1142/S0219720005001144">[supplement]</a>
+            <a  href="https://doi.org/10.1142/S0219720005001132"><i class="fas fa-external-link-alt">&nbsp;</i></a><br>
+            <a  href="https://doi.org/10.1142/S0219720005001144">[supplement]</a>
           </div>
         </div>
 
@@ -2174,7 +2182,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
           <div class="col-md-5"><em>A method for estimating stochastic noise in large genetic
               regulatory networks</em></div>
           <div class="col-md-3">Orrell&nbsp;D, Ramsey&nbsp;S, de&nbsp;Atauri&nbsp;P, Bolouri&nbsp;H</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1093/bioinformatics/bth379"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1093/bioinformatics/bth379"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -2184,7 +2192,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
           <div class="col-md-5"><em>Is the regulation of galactose-1-phosphate
               tuned against gene expression noise?</em></div>
           <div class="col-md-3">de&nbsp;Atauri&nbsp;P, Orrell&nbsp;D, Ramsey&nbsp;S, Bolouri&nbsp;H</div>
-          <div class="col-md-1"><a  target="_blank" rel="noopener" href="https://doi.org/10.1042/BJ20041001"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+          <div class="col-md-1"><a  href="https://doi.org/10.1042/BJ20041001"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
 
         <div class="divider"></div>
@@ -2194,7 +2202,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
           <div class="col-md-5"><em>Evolution of "design" principles in biochemical networks</em></div>
           <div class="col-md-3">de&nbsp;Atauri&nbsp;P, Orrell&nbsp;D, Ramsey&nbsp;S, Bolouri&nbsp;H</div>
           <div class="col-md-1">
-            <a  target="_blank" rel="noopener" href="https://doi.org/10.1049/sb:20045013"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
+            <a  href="https://doi.org/10.1049/sb:20045013"><i class="fas fa-external-link-alt">&nbsp;</i></a></div>
         </div>
       
         </div>
@@ -2257,7 +2265,8 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
 
         <p>
           In partnership with the Science &amp; Math Investigative Learning
-          Experiences (<a href="https://smile.oregonstate.edu" target="_blank" rel="noopener">SMILE</a>) organization, we have developed a series of one-hour science
+          Experiences (<a href="https://smile.oregonstate.edu">SMILE</a>) organization at Oregon State University,
+          we have developed a series of one-hour science
           activities for high school students. The student guides and teacher guides for
           these activities are freely distributed here under the Creative Commons (CC-BY) license.
         </p>
@@ -2265,57 +2274,57 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
         <div class="container altshade">
           
           <div class="row mb-2">
-            <div class="col-md-3"><a href="outreach-activities/PTC-taste-test" target="_blank" rel="noopener"><em>PTC Taste Test</em></a></div>
+            <div class="col-md-3"><a href="outreach-activities/PTC-taste-test"><em>PTC Taste Test</em></a></div>
             <div class="col-md-7">Phenotyping activity based on tasting phenylthiocarbamide.</div>
           </div>
 
           <div class="row mb-2">
-            <div class="col-md-3"><a href="outreach-activities/paper-karyotypes" target="_blank" rel="noopener"><em>Paper Karyotypes</em></a></div>
+            <div class="col-md-3"><a href="outreach-activities/paper-karyotypes"><em>Paper Karyotypes</em></a></div>
             <div class="col-md-7">Learn about chromosomes by reconstructing a karyotype.</div>
           </div>
 
           <div class="row mb-2">
-            <div class="col-md-3"><a href="outreach-activities/Genetic4" target="_blank" rel="noopener"><em>Play Genetic4</em></a></div>
+            <div class="col-md-3"><a href="outreach-activities/Genetic4"><em>Play Genetic4</em></a></div>
             <div class="col-md-7">Learn about genetic conditions by playing Genetic4.</div>
           </div>
 
           <div class="row mb-2">
-            <div class="col-md-3"><a href="outreach-activities/mass-spectrometry" target="_blank" rel="noopener"><em>Dinosaur Mass Spec!</em></a></div>
+            <div class="col-md-3"><a href="outreach-activities/mass-spectrometry"><em>Dinosaur Mass Spec!</em></a></div>
             <div class="col-md-7">Sequence proteins in fossils using Mass Spectrometry!</div>
           </div>
 
           <div class="row mb-2">
-            <div class="col-md-3"><a href="outreach-activities/BLAST" target="_blank" rel="noopener"><em>BLAST</em></a></div>
+            <div class="col-md-3"><a href="outreach-activities/BLAST"><em>BLAST</em></a></div>
             <div class="col-md-7">What types of protein are in this dinosaur fossil?</div>
           </div>
 
           <div class="row mb-2">
-            <div class="col-md-3"><a href="outreach-activities/phylogenetic-trees" target="_blank" rel="noopener"><em>Phylogenetic Trees</em></a></div>
+            <div class="col-md-3"><a href="outreach-activities/phylogenetic-trees"><em>Phylogenetic Trees</em></a></div>
             <div class="col-md-7">Compare dinosaur proteins to modern organisms&#39;</div>
           </div>
 
           <div class="row mb-2">
-            <div class="col-md-3"><a href="outreach-activities/ethics-deextinction" target="_blank" rel="noopener"><em>Ethics of De-Extinction</em></a></div>
+            <div class="col-md-3"><a href="outreach-activities/ethics-deextinction"><em>Ethics of De-Extinction</em></a></div>
             <div class="col-md-7">Should we bring back extinct species? An ethics activity.</div>
           </div>
 
           <div class="row mb-2">
-            <div class="col-md-3"><a href="outreach-activities/smile-genetics/elementary-school-genetics-activity-smile-20190805.pptx" target="_blank" rel="noopener"><em>Build an alien</em> (elementary school)</a></div>
+            <div class="col-md-3"><a href="outreach-activities/smile-genetics/elementary-school-genetics-activity-smile-20190805.pptx"><em>Build an alien</em> (elementary school)</a></div>
             <div class="col-md-7">A Mendelian genetics activity, for elementary school students.</div>
           </div>
 
           <div class="row mb-2">
-            <div class="col-md-3"><a href="outreach-activities/smile-genetics/middle-school-genomics-activity-smile-20190805.pptx" target="_blank" rel="noopener"><em>Solve a murder mystery</em></a></div>
+            <div class="col-md-3"><a href="outreach-activities/smile-genetics/middle-school-genomics-activity-smile-20190805.pptx"><em>Solve a murder mystery</em></a></div>
             <div class="col-md-7">A forensic genomics activity, for middle school students.</div>
           </div>
 
           <div class="row mb-2">
-            <div class="col-md-3"><a href="outreach-activities/smile-genetics/smile-teacher-workshop-intro-20200124.pptx" target="_blank" rel="noopener"><em>Build an alien</em> (high school)</a></div>
+            <div class="col-md-3"><a href="outreach-activities/smile-genetics/smile-teacher-workshop-intro-20200124.pptx"><em>Build an alien</em> (high school)</a></div>
             <div class="col-md-7">A genetics activity, for high school students.</div>
           </div>
 
           <div class="row mb-2">
-            <div class="col-md-3"><a href="outreach-activities/genetics-bingo/" target="_blank" rel="noopener"><em>Genetics bingo</em></a></div>
+            <div class="col-md-3"><a href="outreach-activities/genetics-bingo/"><em>Genetics bingo</em></a></div>
             <div class="col-md-7">A genetics activity, for elementary school students.</div>
           </div>
           
@@ -2339,7 +2348,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
         <h1>Open source</h1>
         <p>
           We generally open-source the software that we have
-          developed in our projects; see our <a href="https://github.com/ramseylab" target="_blank" rel="noopener">lab GitHub page</a>.
+          developed in our projects; see our <a href="https://github.com/ramseylab">lab GitHub page</a>.
         </p>
         
       </div>
@@ -2384,13 +2393,13 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
           
           <div class="row mb-2">
             <div class="col-1"><div class="float-right"><i class="fab fa-github">&nbsp;</i></div></div>
-            <div class="col-6"><a href="https://github.com/saramsey" target="_blank" rel="noopener"><code>@saramsey</code></a></div>
+            <div class="col-6"><a href="https://github.com/saramsey"><code>@saramsey</code></a></div>
           </div>
 
 <!--          
           <div class="row mb-2">
             <div class="col-1"><div class="float-right"><i class="fab fa-linkedin">&nbsp;</i></div></div>
-            <div class="col-6"><a href="https://www.linkedin.com/in/sramsey/" target="_blank" rel="noopener"><code>sramsey</code></a></div>
+            <div class="col-6"><a href="https://www.linkedin.com/in/sramsey/"><code>sramsey</code></a></div>
           </div>
 -->
           <div class="row mb-2">
@@ -2400,7 +2409,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
 
           <div class="row mb-2">
             <div class="col-1"><div class="float-right"><i class="fab fa-orcid">&nbsp;</i></div></div>
-            <div class="col-6"><a href="https://orcid.org/0000-0002-2168-5403" target="_blank" rel="noopener">0000-0002-2168-5403</a></div>
+            <div class="col-6"><a href="https://orcid.org/0000-0002-2168-5403">0000-0002-2168-5403</a></div>
           </div>
 
           
