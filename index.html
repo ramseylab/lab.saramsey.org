@@ -71,12 +71,6 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
       window.oldDiv = section;
       }
       toggle_biosketch("ramsey"); 
-      toggle_biosketch("abazarkulov");
-      toggle_biosketch("fhodges");      
-      toggle_biosketch("gcohen");
-      toggle_biosketch("sbuddhacharya");
-      toggle_biosketch("spullela");
-      toggle_biosketch("sjeong");
       toggle_alumni();
       }
 
@@ -86,11 +80,11 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
       linkname = "biosketch_toggle_link_" + name;
       if (curstate == "none") {
       newstate = "";
-      document.getElementById(linkname).innerHTML = "&#x25bc;&nbsp;bio";
+      document.getElementById(linkname).innerHTML = "&#x25bc;&nbsp;biosketch";
       }
       else {
       newstate = "none";
-      document.getElementById(linkname).innerHTML = "&#x25b6;&nbsp;bio";
+      document.getElementById(linkname).innerHTML = "&#x25b6;&nbsp;biosketch";
       }
       document.getElementById(itemname).style.display = newstate;
       }
@@ -258,18 +252,12 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
           <div class="divider"></div>  
           <div class="divider"></div>
           <div class="row">
-            <div class="col-md-4">Stephen Ramsey</div>
-            <div class="col-md-4">Principal Investigator</div>
-            <div class="col-md-2">
-              <a class="blacklink" href="&#109;ai&#108;&#116;o&#58;r%&#54;&#49;&#109;&#37;73ey&#37;73&#37;74&#64;&#111;r&#101;go%6Esta&#116;&#37;65&#46;%&#54;5%&#54;4u"><i class="fas fa-envelope">&nbsp;</i></a>
-            </div>
-            <div class="col-md-2"><span id="biosketch_toggle_link_ramsey" onclick="javascript:toggle_biosketch('ramsey'); return false;">&nbsp;</span></div>
+            <div class="col-md-3">Stephen Ramsey</div>
+            <div class="col-md-3">Principal Investigator</div>
+            <div class="col-md-5"><span id="biosketch_toggle_link_ramsey"
+                                        onclick="javascript:toggle_biosketch('ramsey'); return false;">&nbsp;</span></div>
           </div>
           <div class="row" id="biosketch_ramsey">
-            <div class="col-md-2">&nbsp;<br><img src="sramsey.png" title="illustration by gudkraf at Fiverr" alt="portrait"><br>
-              &nbsp;<br>
-              <a class="decfont" href="sramsey_studio.jpg">[studio photo]</a>
-            </div>
             <div class="col-md-10">
               &nbsp;<br> Stephen studied physics and mathematics, earning an ScB
               from Brown University and a PhD from the University of Maryland.
@@ -291,115 +279,64 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
                 <li class="halfskip">Faculty Affiliate, OSU Center for Quantitative Life Sciences</li>
                 <li class="halfskip">Senior Member, International Society for Computational Biology</li>
               </ul>
-
             </div>
           </div>
 
           <div class="divider"></div>
           <div class="row">
-            <div class="col-md-4">Adilbek Bazarkulov</div>
-            <div class="col-md-4">Graduate Student</div>
-            <div class="col-md-2">
-              <a class="blacklink" href="&#109;ailt&#111;&#58;b&#97;%7A&#97;rk&#37;7&#53;a&#64;o&#37;72egonsta&#37;7&#52;&#37;&#54;&#53;&#46;%&#54;5&#100;&#117;"><i class="fas fa-envelope">&nbsp;</i></a></div>
-            <div class="col-md-2"><span id="biosketch_toggle_link_abazarkulov" onclick="javascript:toggle_biosketch('abazarkulov'); return false;">&nbsp;</span></div>
-          </div>
-          <div class="row" id="biosketch_abazarkulov">
-            <div class="col-md-2">&nbsp;</div>
-            <div class="col-md-10">
-              &nbsp;<br>Adilbek ("Adil") Bazarkulov is a MS CS student. He has a
-              BS CS degree from Oregon State University. He is working on the
-              NCATS Translator project.
-            </div>
+            <div class="col-md-3">Adilbek Bazarkulov</div>
+            <div class="col-md-3">Graduate Student</div>
+            <div class="col-md-5">Translator project</div>
           </div>
 
           <div class="divider"></div>
+          <div class="divider"></div>
           <div class="row">
-            <div class="col-md-4">Frank Hodges</div>
-            <div class="col-md-4">Graduate Student</div>
-            <div class="col-md-2">
-              <a class="blacklink" href="m&#97;i&#108;to&#58;&#104;odg&#101;sf&#64;%6F%&#55;2e&#37;6&#55;onst%&#54;1&#116;e&#46;%&#54;5&#100;u"><i class="fas fa-envelope">&nbsp;</i></a></div>
-            <div class="col-md-2"><span id="biosketch_toggle_link_fhodges" onclick="javascript:toggle_biosketch('fhodges'); return false;">&nbsp;</span></div>
-          </div>
-          <div class="row" id="biosketch_fhodges">
-            <div class="col-md-2">&nbsp;</div>
-            <div class="col-md-10">
-              &nbsp;<br>Frank ("Frankie") Hodges is a PhD student in AI. He has
-              a BA in biology from Ohio State University and completed the CS
-              post-bac program at OSU. He is working on a project to develop an
-              AI system for repurposing drugs for rare diseases.
-            </div>
+            <div class="col-md-3">Bailey Brown</div>
+            <div class="col-md-3">Undergraduate Student</div>
+            <div class="col-md-5">Chlamydia project</div>
           </div>
 
           <div class="divider"></div>
+          <div class="divider"></div>
           <div class="row">
-            <div class="col-md-4">Guy Cohen</div>
-            <div class="col-md-4">Post-Bac Student</div>
-            <div class="col-md-2">
-              <a class="blacklink" href="&#109;ailto&#58;coh&#101;%6E&#103;u%4&#48;%6F%72e&#103;onst&#37;61%74e&#46;edu"><i class="fas fa-envelope">&nbsp;</i></a></div>
-            <div class="col-md-2"><span id="biosketch_toggle_link_gcohen" onclick="javascript:toggle_biosketch('gcohen'); return false;">&nbsp;</span></div>
+            <div class="col-md-3">Frank Hodges</div>
+            <div class="col-md-3">Graduate Student</div>
+            <div class="col-md-5">Rare disease project; Translator project</div>
           </div>
-          <div class="row" id="biosketch_gcohen">
-            <div class="col-md-2">&nbsp;</div>
-            <div class="col-md-10">
-              &nbsp;<br>Guy is a post-bac student in CS.  He has a Bachelors of
-              Commerce from Toronto Metropolitan University. He is working on
-              the rare disease project.
-            </div>
+
+          <div class="divider"></div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3">Guy Cohen</div>
+            <div class="col-md-3">Post-Bac Student</div>
+            <div class="col-md-5">Rare disease project</div>
           </div>          
 
           <div class="divider"></div>
-          <div class="row">
-            <div class="col-md-4">Sangam Buddhacharya</div>
-            <div class="col-md-4">Graduate Student</div>
-            <div class="col-md-2">
-              <a class="blacklink" href="mai&#108;to&#58;&#98;&#117;ddhacs&#64;ore%67&#37;6F&#110;s&#116;a%74e&#46;edu"><i class="fas fa-envelope">&nbsp;</i></a></div>
-            <div class="col-md-2"><span id="biosketch_toggle_link_sbuddhacharya" onclick="javascript:toggle_biosketch('sbuddhacharya'); return false;">&nbsp;</span></div>
-          </div>
-          <div class="row" id="biosketch_sbuddhacharya">
-            <div class="col-md-2">&nbsp;</div>
-            <div class="col-md-10">
-              &nbsp;<br> Sangam is a graduate student in artificial intelligence. He has a
-              bachelor&#39;s in electronics and communication engineering from Tribhuvan University in Nepal.
-              He is working on the epilepsy project.
-            </div>
-          </div>
-
           <div class="divider"></div>
           <div class="row">
-            <div class="col-md-4">Sundareswar Pullela</div>
-            <div class="col-md-4">Research Assistant</div>
-            <div class="col-md-2">
-              <a class="blacklink" href="&#109;ailto&#58;pu%6C%6Cel%6&#49;s&#64;%6Fr&#101;gons&#116;&#37;6&#49;&#116;e&#46;e%64&#117;"><i class="fas fa-envelope">&nbsp;</i></a></div>
-            <div class="col-md-2"><span id="biosketch_toggle_link_spullela" onclick="javascript:toggle_biosketch('spullela'); return false;">&nbsp;</span></div>
-          </div>
-          <div class="row" id="biosketch_spullela">
-            <div class="col-md-2">&nbsp;</div>
-            <div class="col-md-10">
-              &nbsp;<br> Sundareswar ("Sundar") has a bachelor&#39;s in CS from Raghu Engineering College
-              and a MS in CS (with a minor in AI) from Oregon State University.
-              He is working on the NCATS Translator project.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-          <div class="row">
-            <div class="col-md-4">Sumin Jeong</div>
-            <div class="col-md-4">Graduate Student</div>
-            <div class="col-md-2">
-              <a class="blacklink" href="mailto&#58;jeo%6&#69;gs&#117;&#64;%6&#70;rego%&#54;Es&#116;ate&#46;edu"><i class="fas fa-envelope">&nbsp;</i></a></div>
-            <div class="col-md-2"><span id="biosketch_toggle_link_sjeong" onclick="javascript:toggle_biosketch('sjeong'); return false;">&nbsp;</span></div>
-          </div>
-          <div class="row" id="biosketch_sjeong">
-            <div class="col-md-2">&nbsp;</div>
-            <div class="col-md-10">
-              &nbsp;<br> Sumin is a graduate student in bioengineering, co-advised with Dr.&nbsp;Elain Fu. Sumin holds
-              bachelor&#39;s and master's degrees in biological sciences from Sookmyung Women’s University.
-              She is working on the epilepsy project.
-            </div>
-          </div>
+            <div class="col-md-3">Ishaani Jain</div>
+            <div class="col-md-3">Undergraduate Student</div>
+            <div class="col-md-5">Translator project</div>
+          </div>          
           
-        </div>
+          <div class="divider"></div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3">Sumin Jeong</div>
+            <div class="col-md-3">Graduate Student</div>
+            <div class="col-md-5">Saliva project</div>
+          </div>
 
+          <div class="divider"></div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-3">Thanh Nguyen</div>
+            <div class="col-md-3">Undergraduate Student</div>
+            <div class="col-md-5">Rare disease project</div>
+          </div>          
+        </div>
       </div>
     </div>
 
